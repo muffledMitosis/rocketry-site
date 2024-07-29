@@ -14,7 +14,7 @@ const TeamElementView: React.FC<TeamElementViewProps> = (props) => {
   return (
     <div className="relative w-full h-screen">
       <div className="absolute inset-0">
-        {props.backgroundImage ? <Image src={props.backgroundImage} alt="team bg"/> : <div />}
+        {props.backgroundImage ? <Image src={props.backgroundImage} alt="team bg" objectPosition="center" objectFit="cover" fill/> : <div />}
       </div>
       <div className="relative z-10 text-gray-200">
         <h1 className={airstrike.className + " text-4xl text-white"}>{props.teamName}</h1>
