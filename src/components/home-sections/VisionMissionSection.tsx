@@ -16,7 +16,7 @@ const missionText: string = "Class aptent taciti sociosqu ad litora torquent per
 const ViMiItem: React.FC<ViMiItemProps> = (props) => {
 	return (
 		<div className="relative w-full h-screen">
-			<div className="flex flex-col justify-center h-full z-10 text-black">
+			<div className="flex flex-col justify-center h-full z-10 text-white">
 				<h1 className={fontAirstrike.className + " text-6xl text-center"}>{props.heading}</h1>
 				<div className="flex flex-row justify-center w-full">
 					<p className="text-center w-2/3 mt-16">{props.desc}</p>
@@ -29,7 +29,7 @@ const ViMiItem: React.FC<ViMiItemProps> = (props) => {
 export default function VisionMissionSection() {
 	return (
 		<Carousel
-			className="w-screen"
+			className="w-screen bg-gray-800 text-white"
 			opts={{loop: true}}
 			plugins={[Autoplay({delay: 3000})]}
 		>
