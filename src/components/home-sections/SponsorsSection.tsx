@@ -36,7 +36,7 @@ export default function SponsorsSection() {
         <h1 className={fontAirstrike.className + ' text-4xl p-4 text-white md:ml-8 md:mt-8'}>Sponsors</h1>
         <div className='w-full h-full'>
           <div className='grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 mx-8 md:mx-16 mt-8 md:mt-16'>
-            {sponsLogos.map(logo=><Image className="" src={logo} alt="logo"/>)}
+            {sponsLogos.map(logo=><Image key={logo.src} className="" src={logo} alt="logo"/>)}
           </div>
         </div>
       </div>
