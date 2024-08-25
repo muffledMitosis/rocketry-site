@@ -1,3 +1,4 @@
+import JoinUsSection from "@/components/home-sections/JoinUsSection";
 import MainSection from "@/components/home-sections/MainSectoin";
 import SectionRoot from "@/components/home-sections/SectionRoot";
 import SponsorsSection from "@/components/home-sections/SponsorsSection";
@@ -12,6 +13,7 @@ export default function Home() {
         <VisionMissionSection />
         <TeamsSection />
         <SponsorsSection />
+        <JoinUsSection />
       </SectionRoot>
     </main>
   );

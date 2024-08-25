@@ -31,6 +31,7 @@ export default function SponsorsSection() {
   ];
 
   return (
+    <div>
     <div className="flex flex-col md:flex-row w-screen h-screen">
       <div className="w-full h-2/3 md:w-2/3 md:h-full bg-gray-800">
         <h1 className={fontAirstrike.className + ' text-4xl p-4 text-white md:ml-8 md:mt-8'}>Sponsors</h1>
@@ -40,7 +41,7 @@ export default function SponsorsSection() {
           </div>
         </div>
       </div>
-      <div className="h-1/3 w-full md:w-1/3 md:h-full flex flex-row md:flex-col">
+      <div className="h-1/3 w-full md:w-1/3 md:h-full flex flex-row md:flex-col bg-gray-800">
         <div className="relative h-full w-1/4 md:w-full md:h-1/4">
           <Image
             src={imageTop}
@@ -69,6 +70,7 @@ export default function SponsorsSection() {
           />
         </div>
       </div>
+    </div>
     </div>
   );
 }
