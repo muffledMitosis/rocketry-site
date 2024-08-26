@@ -27,7 +27,7 @@ export default function JoinUsSection() {
             src="/images/action-pages/joinus.jpg"
             className="absolute object-cover w-full h-full"
           />
-          <ActionButton text='Join Us 💪'/>
+          <ActionButton text='Join Us 💪 Test change'/>
 
         </div>
         <div className="relative w-full md:w-1/2 h-screen">
