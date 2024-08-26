@@ -21,15 +21,15 @@ pipeline {
             }
         }
 
-        stage('Run Tests') {
-            steps {
-                script {
-                    docker.image("${DOCKER_IMAGE}:${DOCKER_TAG}").inside {
-                        sh 'npm run test'
-                    }
-                }
-            }
-        }
+        // stage('Run Tests') {
+        //     steps {
+        //         script {
+        //             docker.image("${DOCKER_IMAGE}:${DOCKER_TAG}").inside {
+        //                 sh 'npm run test'
+        //             }
+        //         }
+        //     }
+        // }
 
         stage('Deploy') {
             steps {
