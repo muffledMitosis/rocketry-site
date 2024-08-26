@@ -38,7 +38,7 @@ pipeline {
                     sh "sed -i 's|${DOCKER_IMAGE}:.*|${DOCKER_IMAGE}:${DOCKER_TAG}|' docker-compose.yml"
                     
                     // Deploy using docker-compose
-                    sh 'docker-compose up -d'
+                    sh 'docker compose up -d'
                 }
             }
         }
