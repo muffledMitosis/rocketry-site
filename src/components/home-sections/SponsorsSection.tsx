@@ -33,7 +33,7 @@ export default function SponsorsSection() {
   return (
     <div>
     <div className="flex flex-col md:flex-row w-screen h-screen">
-      <div className="w-full h-2/3 md:w-2/3 md:h-full bg-gray-800">
+      <div className="w-full h-2/3 md:w-2/3 md:h-full bg-gradient-to-t from-gray-900 to-gray-800">
         <h1 className={fontAirstrike.className + ' text-4xl p-4 text-white md:ml-8 md:mt-8'}>Sponsors</h1>
         <div className='w-full h-full'>
           <div className='grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 mx-8 md:mx-16 mt-8 md:mt-16'>
@@ -41,7 +41,7 @@ export default function SponsorsSection() {
           </div>
         </div>
       </div>
-      <div className="h-1/3 w-full md:w-1/3 md:h-full flex flex-row md:flex-col bg-gray-800">
+      <div className="h-1/3 w-full md:w-1/3 md:h-full flex flex-row md:flex-col bg-gray-800 shadow-2xl shadow-black">
         <div className="relative h-full w-1/4 md:w-full md:h-1/4">
           <Image
             src={imageTop}

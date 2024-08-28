@@ -28,15 +28,23 @@ const ViMiItem: React.FC<ViMiItemProps> = (props) => {
 
 export default function VisionMissionSection() {
 	return (
-		<Carousel
-			className="w-screen bg-gray-800 text-white"
-			opts={{loop: true}}
-			plugins={[Autoplay({delay: 3000})]}
-		>
-			<CarouselContent>
-				<CarouselItem><ViMiItem heading="Vision" desc={visionText} /></CarouselItem>
-				<CarouselItem><ViMiItem heading="Mission" desc={missionText} /></CarouselItem>
-			</CarouselContent>
-		</Carousel>
+		// <Carousel
+		// 	className="w-screen bg-gray-800 text-white"
+		// 	opts={{loop: true}}
+		// 	plugins={[Autoplay({delay: 3000})]}
+		// >
+		// 	<CarouselContent>
+		// 		<CarouselItem><ViMiItem heading="Vision" desc={visionText} /></CarouselItem>
+		// 		<CarouselItem><ViMiItem heading="Mission" desc={missionText} /></CarouselItem>
+		// 	</CarouselContent>
+		// </Carousel>
+		<div className="flex flex-col md:flex-row w-screen bg-gradient-to-t from-gray-900 to-gray-800 text-white">
+			<div className="w-full md:w-1/2 h-screen">
+				<ViMiItem heading="Vision" desc={visionText} />
+			</div>
+			<div className="w-full md:w-1/2 h-screen">
+				<ViMiItem heading="Mission" desc={missionText} />
+			</div>
+		</div>
 	);
 }

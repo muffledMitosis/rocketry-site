@@ -2,7 +2,12 @@ import Image from 'next/image'
 import heroImage from '@/assets/images/heroImage.jpg'
 import logo from '@/assets/images/logoBlue1.png'
 import heroText from '@/assets/images/hero-text.png'
+import heroTextSm from '@/assets/images/hero-text-sm.png'
 import { fontAirstrike } from '@/lib/localfonts';
+
+import { FaArrowTurnDown } from "react-icons/fa6";
+import { BsBoxArrowInDownRight } from "react-icons/bs";
+
 
 export default function MainSection() {
   return (
@@ -33,9 +38,20 @@ export default function MainSection() {
       <div className={fontAirstrike.className + ' absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 text-4xl text-white'}>
         {/* Welcome to ANU Rocketry */}
 				<Image
+          className='hidden md:inline'
 					src={heroText}
 					alt='hero-text'
 				/>
+				<Image
+          className='inline md:hidden'
+					src={heroTextSm}
+					alt='hero-text'
+				/>
+      </div>
+
+      <div className='absolute flex flex-row items-center mb-12 bottom-0 left-1/2 -translate-x-1/2 z-30 text-white text-3xl font-thin cursor-pointer'>
+        <div>Learn More</div>
+        <div className='ml-2'><BsBoxArrowInDownRight /></div>
       </div>
     </div>
   );
