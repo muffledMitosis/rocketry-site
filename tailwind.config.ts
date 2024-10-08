@@ -76,6 +76,12 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+       backgroundColor: {
+        'custom-blue': '#1E3A8A',   // Example custom blue color
+        'custom-green': '#10B981',  // Example custom green color
+        'custom-purple': '#6B21A8', // Example custom purple color
+        'master-dark': '#1c1c1c'
+      },
     },
   },
   plugins: [require("tailwindcss-animate"), require('@codaworks/react-glow/tailwind')],
