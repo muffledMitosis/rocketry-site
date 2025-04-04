@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Header() {
   return (
-    <header className="p-4 bg-rock-blue-dark">
+    <header className="p-4 bg-gradient-to-r from-rock-blue-dark/100 to-rock-blue-dark/50 sticky top-0 backdrop-blur-xl">
       <div className="flex flex-row justify-between">
         {/* Logo */}
         <div>
