@@ -10,7 +10,7 @@ export default function Footer() {
         <SocialIcon type="email" />
       </div>
       <div className="text-sm text-center">
-        2025 ANU Rocketry. All rights reserved
+        {new Date().getFullYear()} ANU Rocketry. All rights reserved.
       </div>
     </div>
   );
