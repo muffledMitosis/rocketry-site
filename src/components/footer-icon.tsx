@@ -24,7 +24,7 @@ const iconMap: Record<SocialType, { icon: JSX.Element; url: string }> = {
   email: { icon: <FaEnvelope />, url: "mailto:rocketry@anu.edu.au" },
 };
 
-const SocialIcon = ({ type }: { type: SocialType }) => {
+const FooterConnectIcon = ({ type }: { type: SocialType }) => {
   const { icon, url } = iconMap[type];
   return (
     <a
@@ -38,4 +38,4 @@ const SocialIcon = ({ type }: { type: SocialType }) => {
   );
 };
 
-export default SocialIcon;
+export default FooterConnectIcon;
