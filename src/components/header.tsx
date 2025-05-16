@@ -30,10 +30,10 @@ export default function Header() {
       
       ${isScrolled ? 'bg-rock-blue-dark shadow-lg' : 'bg-transparent'}
     `}>
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="container px-4">
         <div className="flex flex-row justify-between">
           {/* Logo */}
-          <div className="ml-2">
+          <div className="mr-2 my-4">
             <Link href={"/"}>
               <Image 
                 src="/assets/images/LogoGoldLong.png"
