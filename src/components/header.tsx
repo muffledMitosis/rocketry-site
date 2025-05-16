@@ -30,7 +30,7 @@ export default function Header() {
       
       ${isScrolled ? 'bg-rock-blue-dark shadow-2xl' : 'bg-transparent'}
     `}>
-      <div className="container px-4">
+      <div className="container px-4 mx-auto">
         <div className="flex flex-row justify-between">
           {/* Logo */}
           <div className="mr-2 my-4">
