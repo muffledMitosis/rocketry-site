@@ -2,6 +2,7 @@
 
 import React, { useRef, useEffect, useState } from 'react';
 import { teams } from '@/data/team-data';
+import Image from 'next/image';
 
 const AboutSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -52,10 +53,12 @@ const AboutSection: React.FC = () => {
               }`}
             >
               <div className="h-48 overflow-hidden">
-                <img 
+                <Image 
                   src={team.image} 
                   alt={team.name} 
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                  width={500}
+                  height={500}
                 />
               </div>
               <div className="p-6">
@@ -133,10 +136,12 @@ const AboutSection: React.FC = () => {
               </div>
             </div>
             <div className="relative h-[400px] rounded-xl overflow-hidden shadow-xl">
-              <img 
+              <Image 
                 src="https://images.pexels.com/photos/60132/pexels-photo-60132.jpeg?auto=compress&cs=tinysrgb&w=1280" 
                 alt="ANU Rocketry Team" 
                 className="w-full h-full object-cover"
+                width={500}
+                height={500}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
                 <div className="p-6 text-white">

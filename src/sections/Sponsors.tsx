@@ -2,6 +2,7 @@
 
 import React, { useRef, useEffect, useState } from 'react';
 import { currentSponsors, sponsorshipTiers, sponsorshipBenefits } from '@/data/sponsorship-data';
+import Image from 'next/image';
 
 const Sponsors: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -84,10 +85,12 @@ const Sponsors: React.FC = () => {
                   }`}
                 >
                   <div className="w-32 h-32 mb-4 rounded-full overflow-hidden bg-white p-2 flex items-center justify-center">
-                    <img
+                    <Image
                       src={sponsor.logo}
                       alt={sponsor.name}
                       className="w-full h-full object-contain"
+                      width={500}
+                      height={500}
                     />
                   </div>
                   <h3 className="text-lg font-semibold text-center text-slate-800 mb-1">
@@ -210,7 +213,7 @@ const Sponsors: React.FC = () => {
                 <div>
                   <h3 className="text-2xl md:text-3xl font-bold mb-4">Custom Sponsorship Packages</h3>
                   <p className="text-blue-100 mb-6">
-                    Don't see a tier that fits your organization's needs? We're happy to work
+                    Don&apos;t see a tier that fits your organization&apos;s needs? We&apos;re happy to work
                     with you to create a custom sponsorship package that aligns with your
                     goals and budget.
                   </p>
