@@ -1,8 +1,8 @@
 export const headerLinks: string[] = [
 	'about us',
-	'vehicles',
+//	'vehicles',
 	'projects',
 	'partners',
-	'media',
-	'recruitment',
+//	'media',
+//	'recruitment',
 ];
