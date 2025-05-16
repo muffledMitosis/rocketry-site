@@ -1,15 +1,13 @@
 import ParallaxBackground from "@/components/parallax-background"
+import AboutSection from "@/sections/About";
+import HeroSection from "@/sections/Hero";
 
 export default function Home() {
   return (
     <>
-      {/* Parallax section - exactly one viewport height */}
-      <ParallaxBackground backgroundImage="/assets/images/hero-images/team-garry.jpg">
-        <div className="flex items-center justify-center h-full">
-          <h1 className="text-4xl font-bold text-white">Parallax Section</h1>
-        </div>
-      </ParallaxBackground>
-      
+      <HeroSection/>
+      <AboutSection/>
+
       {/* Content that scrolls over/after the parallax background */}
       <div className="relative z-20 bg-white min-h-screen p-8">
         <h2 className="text-3xl font-bold mb-4">Big Test Body</h2>

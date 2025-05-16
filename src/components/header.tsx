@@ -28,7 +28,7 @@ export default function Header() {
       fixed w-full z-50
       transition-all duration-300
       
-      ${isScrolled ? 'bg-rock-blue-dark shadow-lg' : 'bg-transparent'}
+      ${isScrolled ? 'bg-rock-blue-dark shadow-2xl' : 'bg-transparent'}
     `}>
       <div className="container px-4">
         <div className="flex flex-row justify-between">
