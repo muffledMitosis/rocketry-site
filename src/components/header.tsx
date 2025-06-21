@@ -5,6 +5,7 @@ import HeaderLink from "./header-link";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { AlignJustify, X } from "lucide-react";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -54,13 +55,13 @@ export default function Header() {
           {/* Mobile Navigation Toggle */}
           <button
             onClick={toggleMenu}
-            className="md:hidden cursor-pointer"
+            className="md:hidden cursor-pointer text-white"
           >
             {
               isMenuOpen ? (
-                <div>CM</div>
+                <div><X /></div>
               ) : (
-                <div>OM</div>
+                <div><AlignJustify /></div>
               )
             }
           </button>
