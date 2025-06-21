@@ -127,12 +127,12 @@ const AboutSection: React.FC = () => {
                 </li>
               </ul>
               <div className="mt-8">
-                <a 
-                  href="#sponsors" 
-                  className="px-6 py-3 bg-blue-700 text-white rounded-lg transition-colors hover:bg-blue-800 inline-block font-medium"
-                >
-                  Sponsorship Opportunities
-                </a>
+                {/* <a  */}
+                {/*   href="#sponsors"  */}
+                {/*   className="px-6 py-3 bg-blue-700 text-white rounded-lg transition-colors hover:bg-blue-800 inline-block font-medium" */}
+                {/* > */}
+                {/*   Sponsorship Opportunities */}
+                {/* </a> */}
               </div>
             </div>
             <div className="relative h-[400px] rounded-xl overflow-hidden shadow-xl">
