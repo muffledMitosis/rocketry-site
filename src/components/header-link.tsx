@@ -27,6 +27,10 @@ export default function HeaderLink(props: HeaderLinkProps) {
     return (bulidLink(linkContent.toUpperCase(), "#join"))
   }
 
+  if(linkContent.includes("sponsors")) {
+    return (bulidLink(linkContent.toUpperCase(), "/sponsors"))
+  }
+
   return (
     <Link
       className={montserrat.className}
