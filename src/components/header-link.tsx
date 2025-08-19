@@ -9,7 +9,7 @@ interface HeaderLinkProps {
 
 const bulidLink = (name: string, href: string)=>{
   return (
-    <Link className={montserrat.className} href={href}>
+    <Link className={`${montserrat.className} text-white hover:text-blue-400 transition-colors duration-200`} href={href}>
       {name.toUpperCase()}
     </Link>
   );
@@ -33,7 +33,7 @@ export default function HeaderLink(props: HeaderLinkProps) {
 
   return (
     <Link
-      className={montserrat.className}
+      className={`${montserrat.className} text-white hover:text-blue-400 transition-colors duration-200`}
       href={linkContent.toLowerCase().split(" ").join("")}
     >
       {linkContent.toUpperCase()}

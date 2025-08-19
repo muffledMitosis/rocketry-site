@@ -31,12 +31,12 @@ const AboutSection: React.FC = () => {
   const isVisible = (id: string) => visibleItems.includes(id);
 
   return (
-    <section id="about" className="py-20 bg-white" ref={sectionRef}>
+    <section id="about" className="py-20 bg-gray-900" ref={sectionRef}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-blue-900 mb-4">About ANU Rocketry</h2>
-          <div className="w-20 h-1 bg-blue-700 mx-auto mb-6"></div>
-          <p className="max-w-3xl mx-auto text-lg text-slate-700">
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">About ANU Rocketry</h2>
+          <div className="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
+          <p className="max-w-3xl mx-auto text-lg text-gray-300">
             ANU Rocketry brings together passionate students from diverse disciplines to design, 
             build, and launch experimental rockets. Our team is organized into eight specialized groups, 
             each focusing on critical aspects of rocket development and operation.
@@ -48,7 +48,7 @@ const AboutSection: React.FC = () => {
             <div 
               key={team.id}
               id={team.id}
-              className={`team-card bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-700 transform ${
+              className={`team-card bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-all duration-700 transform ${
                 isVisible(team.id) ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
               }`}
             >
@@ -62,14 +62,14 @@ const AboutSection: React.FC = () => {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold text-blue-900 mb-2">{team.name}</h3>
-                <p className="text-slate-700 mb-4">{team.description}</p>
+                <h3 className="text-xl font-bold text-blue-400 mb-2">{team.name}</h3>
+                <p className="text-gray-300 mb-4">{team.description}</p>
                 <div>
-                  <h4 className="font-semibold text-blue-800 mb-2">Key Responsibilities:</h4>
-                  <ul className="text-sm text-slate-600 space-y-1">
+                  <h4 className="font-semibold text-blue-300 mb-2">Key Responsibilities:</h4>
+                  <ul className="text-sm text-gray-400 space-y-1">
                     {team.responsibilities.map((responsibility, index) => (
                       <li key={index} className="flex items-start">
-                        <span className="text-blue-700 mr-2">•</span>
+                        <span className="text-blue-400 mr-2">•</span>
                         <span>{responsibility}</span>
                       </li>
                     ))}
@@ -83,46 +83,46 @@ const AboutSection: React.FC = () => {
         <div className="mt-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div>
-              <h3 className="text-2xl md:text-3xl font-bold text-blue-900 mb-4">What We Offer Sponsors</h3>
-              <p className="text-slate-700 mb-6">
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">What We Offer Sponsors</h3>
+              <p className="text-gray-300 mb-6">
                 Partnering with ANU Rocketry offers your organization unique opportunities for 
                 brand visibility, talent recruitment, and technological innovation in the aerospace sector.
               </p>
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center mt-1">
-                    <span className="text-blue-700 text-sm font-bold">✓</span>
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center mt-1">
+                    <span className="text-white text-sm font-bold">✓</span>
                   </div>
                   <div className="ml-3">
-                    <h4 className="font-semibold text-slate-800">Brand Exposure</h4>
-                    <p className="text-slate-600 text-sm">Logo placement on rockets, gear, and promotional materials at competitions and events.</p>
+                    <h4 className="font-semibold text-white">Brand Exposure</h4>
+                    <p className="text-gray-400 text-sm">Logo placement on rockets, gear, and promotional materials at competitions and events.</p>
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center mt-1">
-                    <span className="text-blue-700 text-sm font-bold">✓</span>
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center mt-1">
+                    <span className="text-white text-sm font-bold">✓</span>
                   </div>
                   <div className="ml-3">
-                    <h4 className="font-semibold text-slate-800">Talent Pipeline</h4>
-                    <p className="text-slate-600 text-sm">Access to skilled engineering students with hands-on experience in aerospace technology.</p>
+                    <h4 className="font-semibold text-white">Talent Pipeline</h4>
+                    <p className="text-gray-400 text-sm">Access to skilled engineering students with hands-on experience in aerospace technology.</p>
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center mt-1">
-                    <span className="text-blue-700 text-sm font-bold">✓</span>
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center mt-1">
+                    <span className="text-white text-sm font-bold">✓</span>
                   </div>
                   <div className="ml-3">
-                    <h4 className="font-semibold text-slate-800">R&D Collaboration</h4>
-                    <p className="text-slate-600 text-sm">Opportunities to collaborate on innovative projects and test new technologies.</p>
+                    <h4 className="font-semibold text-white">R&D Collaboration</h4>
+                    <p className="text-gray-400 text-sm">Opportunities to collaborate on innovative projects and test new technologies.</p>
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center mt-1">
-                    <span className="text-blue-700 text-sm font-bold">✓</span>
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center mt-1">
+                    <span className="text-white text-sm font-bold">✓</span>
                   </div>
                   <div className="ml-3">
-                    <h4 className="font-semibold text-slate-800">Community Impact</h4>
-                    <p className="text-slate-600 text-sm">Support STEM education and inspire the next generation of engineers and scientists.</p>
+                    <h4 className="font-semibold text-white">Community Impact</h4>
+                    <p className="text-gray-400 text-sm">Support STEM education and inspire the next generation of engineers and scientists.</p>
                   </div>
                 </li>
               </ul>

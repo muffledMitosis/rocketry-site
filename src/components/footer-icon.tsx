@@ -31,7 +31,7 @@ const FooterConnectIcon = ({ type }: { type: SocialType }) => {
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className="text-3xl"
+      className="text-3xl text-white hover:text-blue-400 transition-colors duration-200"
     >
       {icon}
     </a>
