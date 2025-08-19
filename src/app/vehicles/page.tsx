@@ -160,51 +160,133 @@ const VehiclesPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 overflow-hidden">
-        {/* Grain/Noise Effect */}
-        <div className="absolute inset-0 pointer-events-none">
+      <section className="relative pt-32 pb-20 overflow-hidden">
+        {/* Space Background */}
+        <div 
+          className="absolute inset-0"
+          style={{
+            background: `
+              radial-gradient(ellipse at 20% 50%, #1a1a2e 0%, #16213e 50%, #0f3460 100%),
+              radial-gradient(circle at 80% 20%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+              radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 90% 70%, rgba(120, 219, 226, 0.2) 0%, transparent 50%),
+              linear-gradient(180deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%)
+            `
+          }}
+        />
+        
+        {/* Stars */}
+        <div className="absolute inset-0">
+          {/* Layer 1: Large bright stars */}
           <div 
-            className="absolute inset-0 opacity-25"
+            className="absolute inset-0 opacity-80"
             style={{
               background: `
-                radial-gradient(circle at 1px 1px, rgba(255,255,255,0.15) 1px, transparent 0),
-                radial-gradient(circle at 3px 5px, rgba(255,255,255,0.1) 1px, transparent 0),
-                radial-gradient(circle at 7px 2px, rgba(255,255,255,0.08) 1px, transparent 0),
-                radial-gradient(circle at 2px 8px, rgba(255,255,255,0.12) 1px, transparent 0)
+                radial-gradient(2px 2px at 20px 30px, #ffffff, transparent),
+                radial-gradient(2px 2px at 40px 70px, #fffacd, transparent),
+                radial-gradient(1px 1px at 90px 40px, #ffffff, transparent),
+                radial-gradient(1px 1px at 130px 80px, #87ceeb, transparent),
+                radial-gradient(2px 2px at 160px 30px, #ffffff, transparent),
+                radial-gradient(1px 1px at 200px 100px, #fffacd, transparent),
+                radial-gradient(1px 1px at 240px 50px, #ffffff, transparent),
+                radial-gradient(2px 2px at 280px 90px, #87ceeb, transparent),
+                radial-gradient(1px 1px at 320px 20px, #ffffff, transparent),
+                radial-gradient(1px 1px at 360px 60px, #fffacd, transparent)
               `,
-              backgroundSize: '12px 12px, 15px 15px, 18px 18px, 20px 20px',
-              backgroundPosition: '0 0, 3px 7px, 8px 2px, 1px 12px'
+              backgroundRepeat: 'repeat',
+              backgroundSize: '400px 120px'
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-900/5 to-blue-900/30 opacity-70" />
+          
+          {/* Layer 2: Medium stars */}
+          <div 
+            className="absolute inset-0 opacity-60"
+            style={{
+              background: `
+                radial-gradient(1px 1px at 50px 50px, #ffffff, transparent),
+                radial-gradient(1px 1px at 100px 20px, #87ceeb, transparent),
+                radial-gradient(1px 1px at 150px 70px, #ffffff, transparent),
+                radial-gradient(1px 1px at 250px 30px, #fffacd, transparent),
+                radial-gradient(1px 1px at 300px 80px, #ffffff, transparent),
+                radial-gradient(1px 1px at 350px 10px, #87ceeb, transparent)
+              `,
+              backgroundRepeat: 'repeat',
+              backgroundSize: '400px 100px'
+            }}
+          />
+          
+          {/* Layer 3: Small distant stars */}
+          <div 
+            className="absolute inset-0 opacity-40"
+            style={{
+              background: `
+                radial-gradient(0.5px 0.5px at 25px 25px, #ffffff, transparent),
+                radial-gradient(0.5px 0.5px at 75px 75px, #87ceeb, transparent),
+                radial-gradient(0.5px 0.5px at 125px 25px, #ffffff, transparent),
+                radial-gradient(0.5px 0.5px at 175px 75px, #fffacd, transparent),
+                radial-gradient(0.5px 0.5px at 225px 25px, #ffffff, transparent),
+                radial-gradient(0.5px 0.5px at 275px 75px, #87ceeb, transparent),
+                radial-gradient(0.5px 0.5px at 325px 25px, #ffffff, transparent),
+                radial-gradient(0.5px 0.5px at 375px 75px, #fffacd, transparent)
+              `,
+              backgroundRepeat: 'repeat',
+              backgroundSize: '400px 100px'
+            }}
+          />
+          
+          {/* Shooting star effect */}
+          <div 
+            className="absolute top-1/4 right-1/4 w-1 h-1 bg-white rounded-full opacity-80 animate-pulse"
+            style={{
+              boxShadow: '0 0 10px #ffffff, -100px 0 5px rgba(255,255,255,0.3), -200px 0 3px rgba(255,255,255,0.2)'
+            }}
+          />
         </div>
         
-        <div className="container mx-auto px-4">
+        {/* Nebula effects */}
+        <div className="absolute inset-0">
+          <div 
+            className="absolute top-0 left-0 w-full h-full opacity-20"
+            style={{
+              background: `
+                radial-gradient(ellipse at 10% 20%, rgba(147, 51, 234, 0.3) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 80%, rgba(59, 130, 246, 0.2) 0%, transparent 50%),
+                radial-gradient(ellipse at 90% 10%, rgba(16, 185, 129, 0.15) 0%, transparent 50%)
+              `
+            }}
+          />
+        </div>
+        
+        {/* Text overlay with strong contrast */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/30" />
+        
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 drop-shadow-2xl" style={{ textShadow: '0 4px 8px rgba(0,0,0,0.8), 0 8px 16px rgba(0,0,0,0.4)' }}>
               Our Vehicles
             </h1>
-            <div className="w-24 h-1 bg-blue-400 mx-auto mb-8"></div>
-            <p className="text-xl text-blue-100 max-w-4xl mx-auto leading-relaxed">
+            <div className="w-24 h-1 bg-white mx-auto mb-8 drop-shadow-lg"></div>
+            <p className="text-xl text-white max-w-4xl mx-auto leading-relaxed drop-shadow-lg" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.8), 0 4px 8px rgba(0,0,0,0.4)' }}>
               Explore our fleet of cutting-edge launch vehicles, each designed and built by our talented team 
               to push the boundaries of student aerospace engineering.
             </p>
             <div className="mt-12 grid grid-cols-1 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-300">{vehicles.length}</div>
-                <div className="text-blue-200">Total Vehicles</div>
+                <div className="text-3xl font-bold text-white drop-shadow-lg" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.8)' }}>{vehicles.length}</div>
+                <div className="text-gray-200 drop-shadow-md" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.8)' }}>Total Vehicles</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-300">{vehicles.filter(v => v.status === 'active').length}</div>
-                <div className="text-blue-200">Active</div>
+                <div className="text-3xl font-bold text-white drop-shadow-lg" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.8)' }}>{vehicles.filter(v => v.status === 'active').length}</div>
+                <div className="text-gray-200 drop-shadow-md" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.8)' }}>Active</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-300">{vehicles.filter(v => v.status === 'testing').length}</div>
-                <div className="text-blue-200">Testing</div>
+                <div className="text-3xl font-bold text-white drop-shadow-lg" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.8)' }}>{vehicles.filter(v => v.status === 'testing').length}</div>
+                <div className="text-gray-200 drop-shadow-md" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.8)' }}>Testing</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-300">{vehicles.filter(v => v.status === 'development').length}</div>
-                <div className="text-blue-200">Development</div>
+                <div className="text-3xl font-bold text-white drop-shadow-lg" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.8)' }}>{vehicles.filter(v => v.status === 'development').length}</div>
+                <div className="text-gray-200 drop-shadow-md" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.8)' }}>Development</div>
               </div>
             </div>
           </div>
