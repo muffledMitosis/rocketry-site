@@ -5,20 +5,48 @@ import React, { useRef, useEffect, useState, ReactNode } from 'react';
 interface FullPageScrollProps {
   children: ReactNode[];
   backgroundComponents: ReactNode[];
+  allowScrollInLastSection?: boolean;
 }
 
-const FullPageScroll: React.FC<FullPageScrollProps> = ({ children, backgroundComponents }) => {
+const FullPageScroll: React.FC<FullPageScrollProps> = ({ children, backgroundComponents, allowScrollInLastSection = false }) => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const scrollableRef = useRef<HTMLDivElement>(null);
   const [currentSection, setCurrentSection] = useState(0);
   const [isScrolling, setIsScrolling] = useState(false);
 
   useEffect(() => {
-    // Prevent default body scrolling
-    document.body.style.overflow = 'hidden';
+    // Prevent default body scrolling only when not in last section with scroll enabled
+    const shouldPreventScroll = !allowScrollInLastSection || currentSection < children.length - 1;
+    document.body.style.overflow = shouldPreventScroll ? 'hidden' : 'auto';
     
     let startY = 0;
 
     const handleScroll = (e: WheelEvent) => {
+      // Special handling for last section if scrolling is enabled
+      if (allowScrollInLastSection && currentSection === children.length - 1) {
+        const scrollableContainer = scrollableRef.current;
+        
+        // Check if we're trying to scroll up from the top of the scrollable content
+        if (scrollableContainer && e.deltaY < 0 && scrollableContainer.scrollTop <= 0) {
+          e.preventDefault();
+          e.stopPropagation();
+          
+          if (!isScrolling && currentSection > 0) {
+            setIsScrolling(true);
+            setCurrentSection(currentSection - 1);
+            setTimeout(() => {
+              setIsScrolling(false);
+            }, 1000);
+          }
+          return;
+        }
+        
+        // If not at the top or scrolling down, allow normal scrolling within the content
+        if (scrollableContainer.scrollTop > 0 || e.deltaY > 0) {
+          return;
+        }
+      }
+
       e.preventDefault();
       e.stopPropagation();
       
@@ -102,7 +130,7 @@ const FullPageScroll: React.FC<FullPageScrollProps> = ({ children, backgroundCom
       document.removeEventListener('touchstart', handleTouchStart);
       document.removeEventListener('touchend', handleTouchEnd);
     };
-  }, [currentSection, isScrolling, children.length]);
+  }, [currentSection, isScrolling, children.length, allowScrollInLastSection]);
 
   return (
     <div className="relative overflow-hidden">
@@ -133,33 +161,37 @@ const FullPageScroll: React.FC<FullPageScrollProps> = ({ children, backgroundCom
 
       {/* Content Container - Only this scrolls */}
       <div className="relative z-10">
-        <div
-          ref={containerRef}
-          className="overflow-hidden"
-          style={{
-            height: '100vh',
-          }}
-        >
+        {currentSection < children.length - 1 ? (
+          // Snap scrolling for first sections
           <div
-            className="transition-transform duration-1000 ease-in-out"
-            style={{
-              transform: `translateY(-${currentSection * 100}vh)`,
-              height: `${children.length * 100}vh`,
-            }}
+            ref={containerRef}
+            className="overflow-hidden"
+            style={{ height: '100vh' }}
           >
-            {children.map((child, index) => (
-              <div
-                key={index}
-                className="w-full h-screen flex-shrink-0"
-                style={{
-                  height: '100vh',
-                }}
-              >
-                {child}
-              </div>
-            ))}
+            <div
+              className="transition-transform duration-1000 ease-in-out"
+              style={{
+                transform: `translateY(-${currentSection * 100}vh)`,
+                height: `${children.length * 100}vh`,
+              }}
+            >
+              {children.map((child, index) => (
+                <div key={index} className="w-full h-screen flex-shrink-0">
+                  {child}
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        ) : (
+          // Scrollable last section
+          <div
+            ref={scrollableRef}
+            className="overflow-auto"
+            style={{ height: '100vh' }}
+          >
+            {children[currentSection]}
+          </div>
+        )}
       </div>
 
       {/* Section Navigation Dots */}
