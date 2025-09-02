@@ -13,6 +13,7 @@ const FullPageScroll: React.FC<FullPageScrollProps> = ({ children, backgroundCom
   const scrollableRef = useRef<HTMLDivElement>(null);
   const [currentSection, setCurrentSection] = useState(0);
   const [isScrolling, setIsScrolling] = useState(false);
+  const [allowScrollInSection, setAllowScrollInSection] = useState(true);
 
   useEffect(() => {
     // Reset scroll position when entering the last section
@@ -30,6 +31,13 @@ const FullPageScroll: React.FC<FullPageScrollProps> = ({ children, backgroundCom
       // Special handling for last section if scrolling is enabled
       if (allowScrollInLastSection && currentSection === children.length - 1) {
         const scrollableContainer = scrollableRef.current;
+        
+        // Don't allow any scrolling during transitions
+        if (isScrolling) {
+          e.preventDefault();
+          e.stopPropagation();
+          return;
+        }
         
         // Check if we're trying to scroll up from the top of the scrollable content
         if (scrollableContainer && e.deltaY < 0 && scrollableContainer.scrollTop <= 0) {
@@ -176,37 +184,33 @@ const FullPageScroll: React.FC<FullPageScrollProps> = ({ children, backgroundCom
 
       {/* Content Container - Only this scrolls */}
       <div className="relative z-10">
-        {currentSection < children.length - 1 ? (
-          // Snap scrolling for first sections
+        <div
+          ref={containerRef}
+          className="overflow-hidden"
+          style={{ height: '100vh' }}
+        >
           <div
-            ref={containerRef}
-            className="overflow-hidden"
-            style={{ height: '100vh' }}
+            className="transition-transform duration-600 ease-in-out"
+            style={{
+              transform: `translateY(-${currentSection * 100}vh)`,
+              height: `${children.length * 100}vh`,
+            }}
           >
-            <div
-              className="transition-transform duration-600 ease-in-out"
-              style={{
-                transform: `translateY(-${currentSection * 100}vh)`,
-                height: `${children.length * 100}vh`,
-              }}
-            >
-              {children.map((child, index) => (
-                <div key={index} className="w-full h-screen flex-shrink-0">
-                  {child}
-                </div>
-              ))}
-            </div>
+            {children.map((child, index) => (
+              <div key={index} className="w-full h-screen flex-shrink-0">
+                {allowScrollInLastSection && index === children.length - 1 ? (
+                  // Last section with scrollable content
+                  <div ref={scrollableRef} className="overflow-auto h-full">
+                    {child}
+                  </div>
+                ) : (
+                  // Regular sections
+                  child
+                )}
+              </div>
+            ))}
           </div>
-        ) : (
-          // Scrollable last section
-          <div
-            ref={scrollableRef}
-            className="overflow-auto"
-            style={{ height: '100vh' }}
-          >
-            {children[currentSection]}
-          </div>
-        )}
+        </div>
       </div>
 
     </div>
