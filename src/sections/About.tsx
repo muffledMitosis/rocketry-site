@@ -32,8 +32,8 @@ const AboutSection: React.FC = () => {
   const isVisible = (id: string) => visibleItems.includes(id);
 
   return (
-    <section id="about" className="py-20 bg-white" ref={sectionRef}>
-      <div className="container mx-auto px-4">
+    <section id="about" className="min-h-screen flex items-center" ref={sectionRef}>
+      <div className="container mx-auto px-4 w-full">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-blue-900 mb-4">About ANU Rocketry</h2>
           <div className="w-20 h-1 bg-blue-700 mx-auto mb-6"></div>

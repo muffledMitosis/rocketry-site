@@ -8,8 +8,8 @@ import { eoi_url_25 } from '@/data/join-data';
 const JoinSection: React.FC = () => {
 
   return (
-    <section id="join" className="py-20 bg-blue-900 text-white">
-      <div className="container mx-auto px-4">
+    <section id="join" className="min-h-screen flex items-center text-white">
+      <div className="container mx-auto px-4 w-full">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">Join Our Team</h2>
           <div className="w-20 h-1 bg-blue-400 mx-auto mb-6"></div>
