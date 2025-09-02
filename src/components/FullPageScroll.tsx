@@ -15,6 +15,11 @@ const FullPageScroll: React.FC<FullPageScrollProps> = ({ children, backgroundCom
   const [isScrolling, setIsScrolling] = useState(false);
 
   useEffect(() => {
+    // Reset scroll position when entering the last section
+    if (allowScrollInLastSection && currentSection === children.length - 1 && scrollableRef.current) {
+      scrollableRef.current.scrollTop = 0;
+    }
+    
     // Prevent default body scrolling only when not in last section with scroll enabled
     const shouldPreventScroll = !allowScrollInLastSection || currentSection < children.length - 1;
     document.body.style.overflow = shouldPreventScroll ? 'hidden' : 'auto';
@@ -36,7 +41,7 @@ const FullPageScroll: React.FC<FullPageScrollProps> = ({ children, backgroundCom
             setCurrentSection(currentSection - 1);
             setTimeout(() => {
               setIsScrolling(false);
-            }, 1000);
+            }, 600);
           }
           return;
         }
@@ -65,9 +70,19 @@ const FullPageScroll: React.FC<FullPageScrollProps> = ({ children, backgroundCom
         if (nextSection !== currentSection) {
           setIsScrolling(true);
           setCurrentSection(nextSection);
+          
+          // Reset scroll position if moving to last section
+          if (allowScrollInLastSection && nextSection === children.length - 1) {
+            setTimeout(() => {
+              if (scrollableRef.current) {
+                scrollableRef.current.scrollTop = 0;
+              }
+            }, 50);
+          }
+          
           setTimeout(() => {
             setIsScrolling(false);
-          }, 1000);
+          }, 600);
         }
       }
     };
@@ -79,12 +94,12 @@ const FullPageScroll: React.FC<FullPageScrollProps> = ({ children, backgroundCom
         e.preventDefault();
         setIsScrolling(true);
         setCurrentSection(currentSection + 1);
-        setTimeout(() => setIsScrolling(false), 1000);
+        setTimeout(() => setIsScrolling(false), 600);
       } else if (e.key === 'ArrowUp' && currentSection > 0) {
         e.preventDefault();
         setIsScrolling(true);
         setCurrentSection(currentSection - 1);
-        setTimeout(() => setIsScrolling(false), 1000);
+        setTimeout(() => setIsScrolling(false), 600);
       }
     };
 
@@ -110,7 +125,7 @@ const FullPageScroll: React.FC<FullPageScrollProps> = ({ children, backgroundCom
         if (nextSection !== currentSection) {
           setIsScrolling(true);
           setCurrentSection(nextSection);
-          setTimeout(() => setIsScrolling(false), 1000);
+          setTimeout(() => setIsScrolling(false), 600);
         }
       }
     };
@@ -150,7 +165,7 @@ const FullPageScroll: React.FC<FullPageScrollProps> = ({ children, backgroundCom
         {backgroundComponents.map((backgroundComponent, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+            className={`absolute inset-0 transition-opacity duration-600 ease-in-out ${
               index === currentSection ? 'opacity-100' : 'opacity-0'
             }`}
           >
@@ -169,7 +184,7 @@ const FullPageScroll: React.FC<FullPageScrollProps> = ({ children, backgroundCom
             style={{ height: '100vh' }}
           >
             <div
-              className="transition-transform duration-1000 ease-in-out"
+              className="transition-transform duration-600 ease-in-out"
               style={{
                 transform: `translateY(-${currentSection * 100}vh)`,
                 height: `${children.length * 100}vh`,
@@ -194,27 +209,6 @@ const FullPageScroll: React.FC<FullPageScrollProps> = ({ children, backgroundCom
         )}
       </div>
 
-      {/* Section Navigation Dots */}
-      <div className="fixed right-6 top-1/2 transform -translate-y-1/2 z-50 space-y-3">
-        {backgroundComponents.map((_, index) => (
-          <button
-            key={index}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              index === currentSection
-                ? 'bg-white scale-125 shadow-lg'
-                : 'bg-white/50 hover:bg-white/75'
-            }`}
-            onClick={() => {
-              if (!isScrolling && index !== currentSection) {
-                setIsScrolling(true);
-                setCurrentSection(index);
-                setTimeout(() => setIsScrolling(false), 1000);
-              }
-            }}
-            aria-label={`Go to section ${index + 1}`}
-          />
-        ))}
-      </div>
     </div>
   );
 };

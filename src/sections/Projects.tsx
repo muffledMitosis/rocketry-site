@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import FooterConnectIcon from '@/components/footer-icon';
 
 const ProjectsSection: React.FC = () => {
   const projects = [
@@ -103,8 +104,20 @@ const ProjectsSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Bottom spacing */}
-        <div className="h-20" />
+        {/* Footer Section */}
+        <div className="mt-32 pt-16 border-t border-slate-700/50">
+          <div className="flex flex-col items-center justify-center text-white">
+            <div className="flex flex-row space-x-6 mb-6">
+              <FooterConnectIcon type="facebook" />
+              <FooterConnectIcon type="instagram" />
+              <FooterConnectIcon type="linkedin" />
+              <FooterConnectIcon type="email" />
+            </div>
+            <div className="text-sm text-center text-slate-400 mb-8">
+              {new Date().getFullYear()} ANU Rocketry. All rights reserved.
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

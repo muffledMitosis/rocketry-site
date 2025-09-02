@@ -27,6 +27,12 @@ const HeroBackground: React.FC = () => {
           }
         }}
       />
+      
+      {/* Dark gradient overlay on the left side for text legibility */}
+      <div className="absolute inset-0" 
+           style={{
+             background: 'linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 40%, transparent 70%)'
+           }} />
     </div>
   );
 };

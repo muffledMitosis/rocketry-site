@@ -4,33 +4,18 @@ import { headerLinks } from "@/data/header-content";
 import HeaderLink from "./header-link";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { AlignJustify, X } from "lucide-react";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScolled(window.scrollY > 20);
-    }
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   }
 
   return (
-    <header className={`
-      fixed w-full z-50
-      transition-all duration-300
-      
-      ${isScrolled ? 'bg-rock-blue-dark shadow-2xl' : 'bg-transparent'}
-    `}>
+    <header className="w-full bg-transparent">
       <div className="container px-4 mx-auto">
         <div className="flex flex-row justify-between">
           {/* Logo */}
