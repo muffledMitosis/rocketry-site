@@ -13,7 +13,6 @@ const FullPageScroll: React.FC<FullPageScrollProps> = ({ children, backgroundCom
   const scrollableRef = useRef<HTMLDivElement>(null);
   const [currentSection, setCurrentSection] = useState(0);
   const [isScrolling, setIsScrolling] = useState(false);
-  const [allowScrollInSection, setAllowScrollInSection] = useState(true);
 
   useEffect(() => {
     // Reset scroll position when entering the last section
@@ -55,7 +54,7 @@ const FullPageScroll: React.FC<FullPageScrollProps> = ({ children, backgroundCom
         }
         
         // If not at the top or scrolling down, allow normal scrolling within the content
-        if (scrollableContainer.scrollTop > 0 || e.deltaY > 0) {
+        if (scrollableContainer && (scrollableContainer.scrollTop > 0 || e.deltaY > 0)) {
           return;
         }
       }
