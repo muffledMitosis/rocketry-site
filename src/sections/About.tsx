@@ -1,8 +1,9 @@
 'use client';
 
 import React, { useRef, useEffect, useState } from 'react';
-import { teams } from '@/data/team-data';
 import Image from 'next/image';
+import Link from 'next/link';
+import { Rocket, Users, Award, Target, Lightbulb, Globe } from 'lucide-react';
 
 const AboutSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -20,11 +21,11 @@ const AboutSection: React.FC = () => {
       { threshold: 0.1 }
     );
 
-    const teamElements = document.querySelectorAll('.team-card');
-    teamElements.forEach((el) => observer.observe(el));
+    const elements = document.querySelectorAll('.fade-in-card, .stat-card');
+    elements.forEach((el) => observer.observe(el));
 
     return () => {
-      teamElements.forEach((el) => observer.unobserve(el));
+      elements.forEach((el) => observer.unobserve(el));
     };
   }, []);
 
@@ -37,47 +38,132 @@ const AboutSection: React.FC = () => {
           <h2 className="text-3xl md:text-5xl font-bold text-blue-900 mb-4">About ANU Rocketry</h2>
           <div className="w-20 h-1 bg-blue-700 mx-auto mb-6"></div>
           <p className="max-w-3xl mx-auto text-lg text-slate-700">
-            ANU Rocketry brings together passionate students from diverse disciplines to design, 
-            build, and launch experimental rockets. Our team is organized into eight specialized groups, 
-            each focusing on critical aspects of rocket development and operation.
+            ANU Rocketry is a student-led organization dedicated to advancing aerospace engineering 
+            through hands-on learning, innovative design, and practical application. We bring together 
+            passionate students from diverse disciplines to push the boundaries of what&apos;s possible.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {teams.map((team) => (
-            <div 
-              key={team.id}
-              id={team.id}
-              className={`team-card bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-700 transform ${
-                isVisible(team.id) ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-              }`}
-            >
-              <div className="h-48 overflow-hidden">
-                <Image 
-                  src={team.image} 
-                  alt={team.name} 
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                  width={500}
-                  height={500}
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-blue-900 mb-2">{team.name}</h3>
-                <p className="text-slate-700 mb-4">{team.description}</p>
-                <div>
-                  <h4 className="font-semibold text-blue-800 mb-2">Key Responsibilities:</h4>
-                  <ul className="text-sm text-slate-600 space-y-1">
-                    {team.responsibilities.map((responsibility, index) => (
-                      <li key={index} className="flex items-start">
-                        <span className="text-blue-700 mr-2">•</span>
-                        <span>{responsibility}</span>
-                      </li>
-                    ))}
-                  </ul>
+        {/* Mission & Vision */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+          <div 
+            id="mission-card"
+            className={`fade-in-card transition-all duration-700 transform ${
+              isVisible('mission-card') ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'
+            }`}
+          >
+            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-8 h-full">
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
+                  <Target className="w-6 h-6 text-white" />
                 </div>
+                <h3 className="text-2xl font-bold text-blue-900">Our Mission</h3>
               </div>
+              <p className="text-slate-700 text-lg leading-relaxed">
+                To provide students with practical, hands-on experience in aerospace engineering 
+                through the design, construction, and launch of experimental rockets, while fostering 
+                innovation, collaboration, and technical excellence.
+              </p>
             </div>
-          ))}
+          </div>
+
+          <div 
+            id="vision-card"
+            className={`fade-in-card transition-all duration-700 transform delay-200 ${
+              isVisible('vision-card') ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'
+            }`}
+          >
+            <div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-xl p-8 h-full">
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 bg-slate-600 rounded-lg flex items-center justify-center mr-4">
+                  <Lightbulb className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-slate-900">Our Vision</h3>
+              </div>
+              <p className="text-slate-700 text-lg leading-relaxed">
+                To be recognized as a leading student rocketry organization that bridges the gap 
+                between theoretical knowledge and real-world aerospace applications, preparing 
+                the next generation of aerospace professionals.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Statistics */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20">
+          <div 
+            id="stat-1"
+            className={`stat-card text-center transition-all duration-700 transform ${
+              isVisible('stat-1') ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+            }`}
+          >
+            <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Users className="w-8 h-8 text-blue-600" />
+            </div>
+            <div className="text-3xl font-bold text-blue-900 mb-2">50+</div>
+            <div className="text-slate-600 text-sm uppercase tracking-wide">Active Members</div>
+          </div>
+          
+          <div 
+            id="stat-2"
+            className={`stat-card text-center transition-all duration-700 transform delay-100 ${
+              isVisible('stat-2') ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+            }`}
+          >
+            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Rocket className="w-8 h-8 text-green-600" />
+            </div>
+            <div className="text-3xl font-bold text-green-600 mb-2">15+</div>
+            <div className="text-slate-600 text-sm uppercase tracking-wide">Rockets Launched</div>
+          </div>
+          
+          <div 
+            id="stat-3"
+            className={`stat-card text-center transition-all duration-700 transform delay-200 ${
+              isVisible('stat-3') ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+            }`}
+          >
+            <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Award className="w-8 h-8 text-amber-600" />
+            </div>
+            <div className="text-3xl font-bold text-amber-600 mb-2">3</div>
+            <div className="text-slate-600 text-sm uppercase tracking-wide">Competition Wins</div>
+          </div>
+          
+          <div 
+            id="stat-4"
+            className={`stat-card text-center transition-all duration-700 transform delay-300 ${
+              isVisible('stat-4') ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+            }`}
+          >
+            <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Globe className="w-8 h-8 text-purple-600" />
+            </div>
+            <div className="text-3xl font-bold text-purple-600 mb-2">5</div>
+            <div className="text-slate-600 text-sm uppercase tracking-wide">Years Experience</div>
+          </div>
+        </div>
+
+        {/* Teams CTA */}
+        <div 
+          id="teams-cta"
+          className={`fade-in-card transition-all duration-700 transform ${
+            isVisible('teams-cta') ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+          }`}
+        >
+          <div className="bg-gradient-to-r from-blue-900 to-blue-700 rounded-2xl p-8 md:p-12 text-white text-center">
+            <h3 className="text-2xl md:text-3xl font-bold mb-4">Meet Our Specialized Teams</h3>
+            <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
+              Our success comes from the dedication and expertise of our eight specialized teams, 
+              each focusing on critical aspects of rocket development and operations.
+            </p>
+            <Link 
+              href="/teams"
+              className="inline-block px-8 py-4 bg-white text-blue-900 rounded-lg font-semibold hover:bg-blue-50 transition-colors text-lg"
+            >
+              Explore Our Teams
+            </Link>
+          </div>
         </div>
         
         <div className="mt-20">
