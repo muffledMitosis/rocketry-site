@@ -27,8 +27,8 @@ export default function HeaderLink(props: HeaderLinkProps) {
     return (bulidLink(linkContent.toUpperCase(), "#join"))
   }
 
-  if(linkContent.includes("sponsors")) {
-    return (bulidLink(linkContent.toUpperCase(), "/sponsors"))
+  if(linkContent.includes("partners")) {
+    return (bulidLink(linkContent.toUpperCase(), "/partners"))
   }
 
   return (

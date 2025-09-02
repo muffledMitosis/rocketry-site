@@ -1,20 +1,20 @@
-export interface SponsorshipTier {
+export interface PartnershipTier {
   tier: string;
   price: string;
   benefits: string[];
   color: string;
 }
 
-export interface Sponsor {
+export interface Partner {
   name: string;
   logo: string;
   tier: string;
   website: string;
 }
 
-export const sponsorshipTiers: SponsorshipTier[] = [
+export const partnershipTiers: PartnershipTier[] = [
   {
-    tier: 'Platinum',
+    tier: 'Apogee',
     price: '$10,000+',
     benefits: [
       'Prime logo placement on rocket and all team gear',
@@ -28,7 +28,7 @@ export const sponsorshipTiers: SponsorshipTier[] = [
     color: 'from-slate-700 to-slate-900'
   },
   {
-    tier: 'Gold',
+    tier: 'Ascent',
     price: '$5,000 - $9,999',
     benefits: [
       'Large logo on rocket and team uniforms',
@@ -41,19 +41,19 @@ export const sponsorshipTiers: SponsorshipTier[] = [
     color: 'from-amber-500 to-amber-700'
   },
   {
-    tier: 'Silver',
+    tier: 'Take-off',
     price: '$2,500 - $4,999',
     benefits: [
       'Medium logo on rocket and team website',
       'Acknowledgment in competition materials',
       'Updates on team progress and achievements',
       'Social media mentions',
-      'All benefits from Bronze tier'
+      'All benefits from Ignition tier'
     ],
     color: 'from-gray-300 to-gray-500'
   },
   {
-    tier: 'Bronze',
+    tier: 'Ignition',
     price: '$1,000 - $2,499',
     benefits: [
       'Small logo on team website',
@@ -76,29 +76,29 @@ export const sponsorshipTiers: SponsorshipTier[] = [
   }
 ];
 
-export const currentSponsors: Sponsor[] = [
+export const currentPartners: Partner[] = [
   {
     name: 'ANU College of Engineering',
     logo: 'https://images.pexels.com/photos/267582/pexels-photo-267582.jpeg?auto=compress&cs=tinysrgb&w=200',
-    tier: 'Platinum',
+    tier: 'Apogee',
     website: '#'
   },
   {
     name: 'Aerospace Dynamics',
     logo: 'https://images.pexels.com/photos/6612380/pexels-photo-6612380.jpeg?auto=compress&cs=tinysrgb&w=200',
-    tier: 'Gold',
+    tier: 'Ascent',
     website: '#'
   },
   {
     name: 'TechSystems International',
     logo: 'https://images.pexels.com/photos/2156/sky-earth-space-working.jpg?auto=compress&cs=tinysrgb&w=200',
-    tier: 'Silver',
+    tier: 'Take-off',
     website: '#'
   },
   {
     name: 'Advanced Materials Co.',
     logo: 'https://images.pexels.com/photos/6985001/pexels-photo-6985001.jpeg?auto=compress&cs=tinysrgb&w=200',
-    tier: 'Bronze',
+    tier: 'Ignition',
     website: '#'
   },
   {
@@ -109,7 +109,7 @@ export const currentSponsors: Sponsor[] = [
   }
 ];
 
-export const sponsorshipBenefits = [
+export const partnershipBenefits = [
   {
     title: 'Brand Visibility',
     description: 'Your logo featured prominently on our rockets, team uniforms, website, and promotional materials that reach thousands of industry professionals, students, and aerospace enthusiasts.'
@@ -128,7 +128,7 @@ export const sponsorshipBenefits = [
   },
   {
     title: 'Media Exposure',
-    description: 'Recognition in competition coverage, press releases, and social media campaigns that highlight our achievements and sponsors.'
+    description: 'Recognition in competition coverage, press releases, and social media campaigns that highlight our achievements and partners.'
   },
   {
     title: 'Product Testing',

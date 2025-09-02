@@ -2,9 +2,9 @@
 
 import React, { useEffect, useState } from 'react';
 import { ExternalLink } from 'lucide-react';
-import { sponsors, sponsorTiers, Sponsor } from '@/data/sponsors-data';
+import { partners, partnerTiers, Partner } from '@/data/sponsors-data';
 
-const SponsorsPage: React.FC = () => {
+const PartnersPage: React.FC = () => {
   const [visibleItems, setVisibleItems] = useState<string[]>([]);
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -32,11 +32,11 @@ const SponsorsPage: React.FC = () => {
         { threshold: 0.05, rootMargin: '50px' }
       );
 
-      const sponsorElements = document.querySelectorAll('.sponsor-card');
-      sponsorElements.forEach((el) => observer.observe(el));
+      const partnerElements = document.querySelectorAll('.partner-card');
+      partnerElements.forEach((el) => observer.observe(el));
 
       return () => {
-        sponsorElements.forEach((el) => observer.unobserve(el));
+        partnerElements.forEach((el) => observer.unobserve(el));
       };
     }, 100);
 
@@ -48,20 +48,20 @@ const SponsorsPage: React.FC = () => {
 
   const isVisible = (id: string) => visibleItems.includes(id);
 
-  const getSponsorsByTier = (tier: string) => {
-    return sponsors.filter(sponsor => sponsor.tier === tier);
+  const getPartnersByTier = (tier: string) => {
+    return partners.filter(partner => partner.tier === tier);
   };
 
-  const SponsorCard: React.FC<{ sponsor: Sponsor; index: number }> = ({ sponsor, index }) => (
+  const PartnerCard: React.FC<{ partner: Partner; index: number }> = ({ partner, index }) => (
     <div 
-      id={sponsor.id}
-      className={`sponsor-card group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform overflow-hidden border border-gray-100 ${
-        isVisible(sponsor.id) || isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+      id={partner.id}
+      className={`partner-card group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform overflow-hidden border border-gray-100 ${
+        isVisible(partner.id) || isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
       }`}
       style={{ transitionDelay: `${index * 100}ms` }}
     >
       <a 
-        href={sponsor.website} 
+        href={partner.website} 
         target="_blank" 
         rel="noopener noreferrer"
         className="block p-8 h-full"
@@ -71,7 +71,7 @@ const SponsorsPage: React.FC = () => {
           <div className="relative w-32 h-32 mb-6 rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
             {/* Placeholder for sponsor logo - will be replaced with actual logos */}
             <div className="w-24 h-24 bg-gray-300 rounded-lg flex items-center justify-center filter grayscale group-hover:grayscale-0 transition-all duration-300">
-              <span className="text-gray-600 font-bold text-sm">{sponsor.name.split(' ').map(word => word[0]).join('')}</span>
+              <span className="text-gray-600 font-bold text-sm">{partner.name.split(' ').map(word => word[0]).join('')}</span>
             </div>
             
             {/* Hover overlay */}
@@ -86,10 +86,10 @@ const SponsorsPage: React.FC = () => {
           {/* Content */}
           <div className="flex-1">
             <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-900 transition-colors duration-300">
-              {sponsor.name}
+              {partner.name}
             </h3>
             <p className="text-sm text-gray-600 italic group-hover:text-gray-800 transition-colors duration-300">
-              {sponsor.slogan}
+              {partner.slogan}
             </p>
           </div>
 
@@ -101,10 +101,10 @@ const SponsorsPage: React.FC = () => {
   );
 
   const TierSection: React.FC<{ tier: string }> = ({ tier }) => {
-    const tierSponsors = getSponsorsByTier(tier);
-    if (tierSponsors.length === 0) return null;
+    const tierPartners = getPartnersByTier(tier);
+    if (tierPartners.length === 0) return null;
 
-    const tierInfo = sponsorTiers[tier as keyof typeof sponsorTiers];
+    const tierInfo = partnerTiers[tier as keyof typeof partnerTiers];
 
     return (
       <div className="mb-16">
@@ -119,8 +119,8 @@ const SponsorsPage: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {tierSponsors.map((sponsor, index) => (
-            <SponsorCard key={sponsor.id} sponsor={sponsor} index={index} />
+          {tierPartners.map((partner, index) => (
+            <PartnerCard key={partner.id} partner={partner} index={index} />
           ))}
         </div>
       </div>
@@ -165,11 +165,11 @@ const SponsorsPage: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Our Sponsors
+              Our Partners
             </h1>
             <div className="w-24 h-1 bg-blue-400 mx-auto mb-8"></div>
             <p className="text-xl text-blue-100 max-w-4xl mx-auto leading-relaxed">
-              We are grateful to our incredible sponsors who make our mission possible. 
+              We are grateful to our incredible partners who make our mission possible. 
               Through their support, we continue to push the boundaries of student aerospace engineering 
               and inspire the next generation of innovators.
             </p>
@@ -194,7 +194,7 @@ const SponsorsPage: React.FC = () => {
       {/* Sponsors Sections */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          {Object.keys(sponsorTiers).map((tier) => (
+          {Object.keys(partnerTiers).map((tier) => (
             <TierSection key={tier} tier={tier} />
           ))}
         </div>
@@ -218,7 +218,7 @@ const SponsorsPage: React.FC = () => {
               Partnership Opportunities
             </a>
             <a
-              href="mailto:sponsors@anurocketry.org"
+              href="mailto:partners@anurocketry.org"
               className="px-8 py-4 border-2 border-white text-white rounded-xl font-semibold hover:bg-white hover:text-blue-900 transition-colors duration-300"
             >
               Contact Us
@@ -230,4 +230,4 @@ const SponsorsPage: React.FC = () => {
   );
 };
 
-export default SponsorsPage;
+export default PartnersPage;
