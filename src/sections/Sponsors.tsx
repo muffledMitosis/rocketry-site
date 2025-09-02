@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useRef, useEffect, useState } from 'react';
-import { currentSponsors, sponsorshipTiers, sponsorshipBenefits } from '@/data/sponsorship-data';
+import { currentPartners, partnershipTiers, partnershipBenefits } from '@/data/sponsorship-data';
 import Image from 'next/image';
 
 const Sponsors: React.FC = () => {
@@ -74,7 +74,7 @@ const Sponsors: React.FC = () => {
         {activeTab === 'current' && (
           <>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 mb-16">
-              {currentSponsors.map((sponsor, index) => (
+              {currentPartners.map((sponsor, index) => (
                 <div
                   key={sponsor.name}
                   id={`sponsor-${index}`}
@@ -133,7 +133,7 @@ const Sponsors: React.FC = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-              {sponsorshipBenefits.map((benefit, index) => (
+              {partnershipBenefits.map((benefit, index) => (
                 <div
                   key={index}
                   id={`benefit-${index}`}
@@ -172,7 +172,7 @@ const Sponsors: React.FC = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mb-12">
-              {sponsorshipTiers.map((tier, index) => (
+              {partnershipTiers.map((tier, index) => (
                 <div
                   key={tier.tier}
                   id={`tier-${index}`}

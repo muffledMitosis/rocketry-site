@@ -7,16 +7,43 @@ import Link from 'next/link';
 import { ArrowLeft, Calendar, Activity, Ruler, Weight, Zap, TrendingUp, Rocket } from 'lucide-react';
 
 interface VehiclePageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 const VehicleDetailPage: React.FC<VehiclePageProps> = ({ params }) => {
-  const vehicle = getVehicleBySlug(params.slug);
+  const [vehicle, setVehicle] = React.useState<Vehicle | null>(null);
+  const [loading, setLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    const loadVehicle = async () => {
+      const resolvedParams = await params;
+      const vehicleData = getVehicleBySlug(resolvedParams.slug);
+      setVehicle(vehicleData || null);
+      setLoading(false);
+      
+      if (!vehicleData) {
+        notFound();
+      }
+    };
+    
+    loadVehicle();
+  }, [params]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading vehicle details...</p>
+        </div>
+      </div>
+    );
+  }
 
   if (!vehicle) {
-    notFound();
+    return null;
   }
 
   const getStatusColor = (status: Vehicle['status']) => {
@@ -258,11 +285,5 @@ const VehicleDetailPage: React.FC<VehiclePageProps> = ({ params }) => {
   );
 };
 
-// Generate static params for all vehicles
-export function generateStaticParams() {
-  return vehicles.map((vehicle) => ({
-    slug: vehicle.slug,
-  }));
-}
 
 export default VehicleDetailPage;
