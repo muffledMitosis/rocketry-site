@@ -92,7 +92,7 @@ const LatestVehicleSection: React.FC = () => {
                 <div className="w-full h-full flex items-center justify-center">
                   <div className="w-64 h-64 md:w-72 md:h-72 relative">
                     <Image
-                      src="/assets/images/solstice-logo.png"
+                      src="/assets/images/solstice-logo-nobg.png"
                       alt="Solstice Logo"
                       fill
                       className="object-contain drop-shadow-2xl"
