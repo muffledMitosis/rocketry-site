@@ -6,16 +6,19 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { AlignJustify, X } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isHomePage = pathname === '/';
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   }
 
   return (
-    <header className="w-full bg-transparent">
+    <header className={`w-full ${isHomePage ? 'bg-transparent' : 'bg-white shadow-md'}`}>
       <div className="container px-4 mx-auto">
         <div className="flex flex-row justify-between">
           {/* Logo */}
@@ -31,7 +34,7 @@ export default function Header() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex flex-row items-center space-x-4 text-white">
+          <div className={`hidden md:flex flex-row items-center space-x-4 ${isHomePage ? 'text-white' : 'text-gray-800'}`}>
             {headerLinks.map((content) => (
               <HeaderLink key={content} linkContent={content} />
             ))}
@@ -40,7 +43,7 @@ export default function Header() {
           {/* Mobile Navigation Toggle */}
           <button
             onClick={toggleMenu}
-            className="md:hidden cursor-pointer text-white"
+            className={`md:hidden cursor-pointer ${isHomePage ? 'text-white' : 'text-gray-800'}`}
           >
             {
               isMenuOpen ? (

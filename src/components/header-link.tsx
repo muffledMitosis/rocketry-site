@@ -1,4 +1,4 @@
-import Link from "next/link";
+import TransitionLink from "./TransitionLink";
 import { Montserrat } from "next/font/google";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
@@ -9,22 +9,24 @@ interface HeaderLinkProps {
 
 const bulidLink = (name: string, href: string)=>{
   return (
-    <Link className={montserrat.className} href={href}>
+    <TransitionLink 
+      className={`${montserrat.className} hover:opacity-70 transition-opacity duration-200`} 
+      href={href}
+    >
       {name.toUpperCase()}
-    </Link>
+    </TransitionLink>
   );
 }
 
 export default function HeaderLink(props: HeaderLinkProps) {
   const { linkContent } = props;
-  console.log(linkContent);
 
   if(linkContent.includes("about")) {
     return (bulidLink(linkContent.toUpperCase(), "#about"))
   }
 
   if(linkContent.includes("join")) {
-    return (bulidLink(linkContent.toUpperCase(), "#join"))
+    return (bulidLink(linkContent.toUpperCase(), "/join"))
   }
 
   if(linkContent.includes("partners")) {
@@ -32,11 +34,11 @@ export default function HeaderLink(props: HeaderLinkProps) {
   }
 
   return (
-    <Link
-      className={montserrat.className}
+    <TransitionLink
+      className={`${montserrat.className} hover:opacity-70 transition-opacity duration-200`}
       href={linkContent.toLowerCase().split(" ").join("")}
     >
       {linkContent.toUpperCase()}
-    </Link>
+    </TransitionLink>
   );
 }
