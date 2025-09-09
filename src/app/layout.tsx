@@ -3,6 +3,8 @@
 import Header from "@/components/header";
 import "./globals.css";
 import { usePathname } from "next/navigation";
+import { useEffect } from "react";
+import { polyfillViewTransitions } from "@/utils/view-transition-polyfill";
 
 export default function RootLayout({
   children,
@@ -11,6 +13,11 @@ export default function RootLayout({
 }>) {
   const pathname = usePathname();
   const isHomePage = pathname === '/';
+
+  useEffect(() => {
+    // Initialize View Transitions polyfill
+    polyfillViewTransitions();
+  }, []);
 
   return (
     <html lang="en">

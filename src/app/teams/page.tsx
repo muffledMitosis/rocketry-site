@@ -35,7 +35,7 @@ const TeamsPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 overflow-hidden">
+      <section className="relative pt-32 pb-20 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 overflow-hidden" style={{ viewTransitionName: 'page-content' }}>
         {/* Grain/Noise Effect */}
         <div className="absolute inset-0 pointer-events-none">
           <div 

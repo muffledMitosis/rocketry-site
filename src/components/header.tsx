@@ -22,7 +22,7 @@ export default function Header() {
       <div className="container px-4 mx-auto">
         <div className="flex flex-row justify-between">
           {/* Logo */}
-          <div className="mr-2 my-4">
+          <div className="mr-2 my-4" style={{ viewTransitionName: 'logo' }}>
             <Link href={"/"}>
               <Image 
                 src="/assets/images/LogoGoldLong.png"

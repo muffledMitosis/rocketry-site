@@ -9,7 +9,7 @@ const HeroSection = () => {
       </div>
       
       <div className="flex items-center h-full relative z-40">
-        <div className="text-left pl-8 md:pl-16 lg:pl-24 max-w-4xl">
+        <div className="text-left pl-8 md:pl-16 lg:pl-24 max-w-4xl" style={{ viewTransitionName: 'hero-title' }}>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight text-white">
             ANU ROCKETRY: PROVIDING STUDENT EXPERIENCE THROUGH INCLUSION & DIVERSITY
           </h1>

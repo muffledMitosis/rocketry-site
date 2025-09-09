@@ -1,4 +1,4 @@
-import TransitionLink from "./TransitionLink";
+import { ViewTransitionLink } from "./ViewTransition";
 import { Montserrat } from "next/font/google";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
@@ -9,12 +9,13 @@ interface HeaderLinkProps {
 
 const bulidLink = (name: string, href: string)=>{
   return (
-    <TransitionLink 
+    <ViewTransitionLink 
       className={`${montserrat.className} hover:opacity-70 transition-opacity duration-200`} 
       href={href}
+      viewTransitionName="nav-item"
     >
       {name.toUpperCase()}
-    </TransitionLink>
+    </ViewTransitionLink>
   );
 }
 
@@ -34,11 +35,12 @@ export default function HeaderLink(props: HeaderLinkProps) {
   }
 
   return (
-    <TransitionLink
+    <ViewTransitionLink
       className={`${montserrat.className} hover:opacity-70 transition-opacity duration-200`}
       href={linkContent.toLowerCase().split(" ").join("")}
+      viewTransitionName="nav-item"
     >
       {linkContent.toUpperCase()}
-    </TransitionLink>
+    </ViewTransitionLink>
   );
 }
