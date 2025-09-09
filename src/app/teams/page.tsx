@@ -3,8 +3,8 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { teams } from '@/data/team-data';
 import Image from 'next/image';
-import { ArrowLeft, Users, Lightbulb, Target, Rocket } from 'lucide-react';
 import Link from 'next/link';
+import { Users, Lightbulb, Target, Rocket } from 'lucide-react';
 
 const TeamsPage: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -54,15 +54,6 @@ const TeamsPage: React.FC = () => {
         </div>
         
         <div className="container mx-auto px-4">
-          {/* Back Navigation */}
-          <Link 
-            href="/" 
-            className="inline-flex items-center text-blue-200 hover:text-white transition-colors duration-300 mb-8"
-          >
-            <ArrowLeft className="w-5 h-5 mr-2" />
-            Back to Home
-          </Link>
-
           <div className="text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
               Our Teams
