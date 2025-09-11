@@ -29,7 +29,7 @@ export const teams: Team[] = [
       'Static fire testing',
       'Performance analysis and improvement'
     ],
-    image: 'https://images.pexels.com/photos/23764/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1280'
+    image: '/assets/images/no-signal.jpg'
   },
   {
     id: 'payload',
@@ -41,7 +41,7 @@ export const teams: Team[] = [
       'Payload integration with rocket systems',
       'Post-flight scientific analysis'
     ],
-    image: 'https://images.pexels.com/photos/41162/moon-landing-apollo-11-nasa-buzz-aldrin-41162.jpeg?auto=compress&cs=tinysrgb&w=1280'
+    image: '/assets/images/no-signal.jpg'
   },
   {
     id: 'avionics',
@@ -53,7 +53,7 @@ export const teams: Team[] = [
       'Sensor integration and data collection',
       'Recovery system electronics'
     ],
-    image: 'https://images.pexels.com/photos/2085831/pexels-photo-2085831.jpeg?auto=compress&cs=tinysrgb&w=1280'
+    image: '/assets/images/no-signal.jpg'
   },
   {
     id: 'recovery',
@@ -65,7 +65,7 @@ export const teams: Team[] = [
       'Impact mitigation strategies',
       'Reusability optimization'
     ],
-    image: 'https://images.pexels.com/photos/76969/cold-front-warm-front-hurricane-felix-76969.jpeg?auto=compress&cs=tinysrgb&w=1280'
+    image: '/assets/images/no-signal.jpg'
   },
   {
     id: 'dynamics-control',
@@ -77,7 +77,7 @@ export const teams: Team[] = [
       'Stability analysis',
       'Guidance algorithm development'
     ],
-    image: 'https://images.pexels.com/photos/2156/sky-earth-space-working.jpg?auto=compress&cs=tinysrgb&w=1280'
+    image: '/assets/images/no-signal.jpg'
   },
   {
     id: 'engagement-outreach',
@@ -101,7 +101,7 @@ export const teams: Team[] = [
       'Team scheduling and logistics',
       'Event planning and execution'
     ],
-    image: 'https://images.pexels.com/photos/73871/rocket-launch-rocket-take-off-nasa-73871.jpeg?auto=compress&cs=tinysrgb&w=1280'
+    image: '/assets/images/no-signal.jpg'
   },
   {
     id: 'budget-inventory',
@@ -113,7 +113,7 @@ export const teams: Team[] = [
       'Inventory management',
       'Purchase coordination'
     ],
-    image: 'https://images.pexels.com/photos/3153200/pexels-photo-3153200.jpeg?auto=compress&cs=tinysrgb&w=1280'
+    image: '/assets/images/no-signal.jpg'
   },
   {
     id: 'media-design-partnerships',
@@ -149,6 +149,6 @@ export const teams: Team[] = [
       'Quality assurance',
       'Regulatory submissions'
     ],
-    image: 'https://images.pexels.com/photos/60132/pexels-photo-60132.jpeg?auto=compress&cs=tinysrgb&w=1280'
+    image: '/assets/images/no-signal.jpg'
   }
 ];
