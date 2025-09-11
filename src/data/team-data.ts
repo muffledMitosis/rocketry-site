@@ -32,16 +32,16 @@ export const teams: Team[] = [
     image: 'https://images.pexels.com/photos/23764/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1280'
   },
   {
-    id: 'structures',
-    name: 'Structures',
-    description: 'Ensuring the rocket\'s structural integrity through advanced materials and mechanical design.',
+    id: 'payload',
+    name: 'Payload',
+    description: 'Creating scientific experiments and technical demonstrations to be carried on rocket flights.',
     responsibilities: [
-      'Structural analysis and finite element modeling',
-      'Material selection and testing',
-      'Mechanical design and integration',
-      'Manufacturing process development'
+      'Experiment design and development',
+      'Data collection and analysis',
+      'Payload integration with rocket systems',
+      'Post-flight scientific analysis'
     ],
-    image: '/assets/images/team-pics/MDP.jpg'
+    image: 'https://images.pexels.com/photos/41162/moon-landing-apollo-11-nasa-buzz-aldrin-41162.jpeg?auto=compress&cs=tinysrgb&w=1280'
   },
   {
     id: 'avionics',
@@ -68,39 +68,87 @@ export const teams: Team[] = [
     image: 'https://images.pexels.com/photos/76969/cold-front-warm-front-hurricane-felix-76969.jpeg?auto=compress&cs=tinysrgb&w=1280'
   },
   {
-    id: 'payload',
-    name: 'Payload',
-    description: 'Creating scientific experiments and technical demonstrations to be carried on rocket flights.',
+    id: 'dynamics-control',
+    name: 'Dynamics and Control',
+    description: 'Designing control systems and analyzing flight dynamics to ensure stable and predictable rocket behavior.',
     responsibilities: [
-      'Experiment design and development',
-      'Data collection and analysis',
-      'Payload integration with rocket systems',
-      'Post-flight scientific analysis'
+      'Flight dynamics modeling',
+      'Control system design',
+      'Stability analysis',
+      'Guidance algorithm development'
     ],
-    image: 'https://images.pexels.com/photos/41162/moon-landing-apollo-11-nasa-buzz-aldrin-41162.jpeg?auto=compress&cs=tinysrgb&w=1280'
+    image: 'https://images.pexels.com/photos/2156/sky-earth-space-working.jpg?auto=compress&cs=tinysrgb&w=1280'
   },
   {
-    id: 'operations',
-    name: 'Operations',
-    description: 'Managing the logistics, safety protocols, and execution of rocket launches and team activities.',
+    id: 'engagement-outreach',
+    name: 'Engagement and Outreach',
+    description: 'Building relationships with the community, educational institutions, and promoting aerospace education.',
     responsibilities: [
-      'Launch coordination and safety',
+      'Educational outreach programs',
+      'Community engagement',
+      'School visit coordination',
+      'Public demonstrations'
+    ],
+    image: '/assets/images/team-pics/engagement.jpg'
+  },
+  {
+    id: 'logistics',
+    name: 'Logistics',
+    description: 'Managing the operational aspects of launches, transportation, and team coordination.',
+    responsibilities: [
+      'Launch site coordination',
+      'Equipment transportation',
+      'Team scheduling and logistics',
+      'Event planning and execution'
+    ],
+    image: 'https://images.pexels.com/photos/73871/rocket-launch-rocket-take-off-nasa-73871.jpeg?auto=compress&cs=tinysrgb&w=1280'
+  },
+  {
+    id: 'budget-inventory',
+    name: 'Budget and Inventory',
+    description: 'Managing financial resources and tracking equipment and materials inventory.',
+    responsibilities: [
+      'Budget planning and tracking',
+      'Financial reporting',
+      'Inventory management',
+      'Purchase coordination'
+    ],
+    image: 'https://images.pexels.com/photos/3153200/pexels-photo-3153200.jpeg?auto=compress&cs=tinysrgb&w=1280'
+  },
+  {
+    id: 'media-design-partnerships',
+    name: 'Media Design & Partnerships',
+    description: 'Creating visual content, managing partnerships, and developing the team\'s brand presence.',
+    responsibilities: [
+      'Graphic design and branding',
+      'Partnership development',
+      'Social media management',
+      'Marketing materials creation'
+    ],
+    image: '/assets/images/team-pics/MDP.jpg'
+  },
+  {
+    id: 'safety-legal',
+    name: 'Safety and Legal',
+    description: 'Ensuring all activities comply with safety regulations and legal requirements.',
+    responsibilities: [
+      'Safety protocol development',
       'Regulatory compliance',
-      'Budget management',
-      'Team coordination and scheduling'
+      'Risk assessment and mitigation',
+      'Legal documentation'
     ],
     image: '/assets/images/team-pics/safety.png'
   },
   {
-    id: 'outreach',
-    name: 'Outreach',
-    description: 'Building relationships with sponsors, educational institutions, and the broader community.',
+    id: 'certifications',
+    name: 'Certifications',
+    description: 'Managing certification processes and ensuring compliance with aerospace standards.',
     responsibilities: [
-      'Sponsor relations and partnership development',
-      'Educational outreach programs',
-      'Media and public relations',
-      'Recruitment and community engagement'
+      'Certification documentation',
+      'Standards compliance',
+      'Quality assurance',
+      'Regulatory submissions'
     ],
-    image: '/assets/images/team-pics/engagement.jpg'
+    image: 'https://images.pexels.com/photos/60132/pexels-photo-60132.jpeg?auto=compress&cs=tinysrgb&w=1280'
   }
 ];
