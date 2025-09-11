@@ -8,8 +8,8 @@ export interface Team {
 
 export const teams: Team[] = [
   {
-    id: 'aerodynamics',
-    name: 'Aerodynamics',
+    id: 'aerostructures',
+    name: 'Aerostructures',
     description: 'Optimizing the rocket\'s flight characteristics through computational fluid dynamics and wind tunnel testing.',
     responsibilities: [
       'Airframe design and optimization',
@@ -17,7 +17,7 @@ export const teams: Team[] = [
       'Wind tunnel testing and validation',
       'Flight stability analysis'
     ],
-    image: 'https://images.pexels.com/photos/2156/sky-earth-space-working.jpg?auto=compress&cs=tinysrgb&w=1280'
+    image: '/assets/images/team-pics/Aerostructures.png'
   },
   {
     id: 'propulsion',
@@ -41,7 +41,7 @@ export const teams: Team[] = [
       'Mechanical design and integration',
       'Manufacturing process development'
     ],
-    image: 'https://images.pexels.com/photos/60132/pexels-photo-60132.jpeg?auto=compress&cs=tinysrgb&w=1280'
+    image: '/assets/images/team-pics/MDP.jpg'
   },
   {
     id: 'avionics',
@@ -89,7 +89,7 @@ export const teams: Team[] = [
       'Budget management',
       'Team coordination and scheduling'
     ],
-    image: 'https://images.pexels.com/photos/73871/rocket-launch-rocket-take-off-nasa-73871.jpeg?auto=compress&cs=tinysrgb&w=1280'
+    image: '/assets/images/team-pics/safety.png'
   },
   {
     id: 'outreach',
@@ -101,6 +101,6 @@ export const teams: Team[] = [
       'Media and public relations',
       'Recruitment and community engagement'
     ],
-    image: 'https://images.pexels.com/photos/3153200/pexels-photo-3153200.jpeg?auto=compress&cs=tinysrgb&w=1280'
+    image: '/assets/images/team-pics/engagement.jpg'
   }
 ];
