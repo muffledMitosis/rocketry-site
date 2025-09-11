@@ -29,7 +29,7 @@ export const teams: Team[] = [
       'Static fire testing',
       'Performance analysis and improvement'
     ],
-    image: '/assets/images/no-signal.jpg'
+    image: '/assets/images/team-pics/propulsion.png'
   },
   {
     id: 'payload',
