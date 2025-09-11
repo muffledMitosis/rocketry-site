@@ -12,13 +12,14 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
   const isHomePage = pathname === '/';
+  const isTransparentPage = isHomePage || pathname === '/teams' || pathname === '/partners' || pathname === '/vehicles';
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   }
 
   return (
-    <header className={`w-full ${isHomePage ? 'bg-transparent' : 'bg-white shadow-md'}`}>
+    <header className={`w-full ${isTransparentPage ? 'absolute top-0 z-50 bg-transparent' : 'bg-white shadow-md'}`}>
       <div className="container px-4 mx-auto">
         <div className="flex flex-row justify-between">
           {/* Logo */}
@@ -34,7 +35,7 @@ export default function Header() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className={`hidden md:flex flex-row items-center space-x-4 ${isHomePage ? 'text-white' : 'text-gray-800'}`}>
+          <div className={`hidden md:flex flex-row items-center space-x-4 ${isTransparentPage ? 'text-white' : 'text-gray-800'}`}>
             {headerLinks.map((content) => (
               <HeaderLink key={content} linkContent={content} />
             ))}
@@ -43,7 +44,7 @@ export default function Header() {
           {/* Mobile Navigation Toggle */}
           <button
             onClick={toggleMenu}
-            className={`md:hidden cursor-pointer ${isHomePage ? 'text-white' : 'text-gray-800'}`}
+            className={`md:hidden cursor-pointer ${isTransparentPage ? 'text-white' : 'text-gray-800'}`}
           >
             {
               isMenuOpen ? (

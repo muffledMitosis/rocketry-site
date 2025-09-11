@@ -160,7 +160,7 @@ const VehiclesPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
+      <section className="relative h-[50vh] overflow-hidden flex items-center">
         {/* Space Background */}
         <div 
           className="absolute inset-0"
