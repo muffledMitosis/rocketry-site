@@ -3,10 +3,16 @@
 import React, { useRef, useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Rocket } from 'lucide-react';
+import { vehicles } from '@/data/vehicles-data';
 
 const LatestVehicleSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  
+  // Get vehicles sorted by year (descending), then take the most recent one
+  const sortedVehicles = [...vehicles].sort((a, b) => b.year - a.year);
+  const primaryVehicle = sortedVehicles[0]; // This will be the most recent
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -45,36 +51,40 @@ const LatestVehicleSection: React.FC = () => {
               isVisible ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'
             }`}
           >
-            <div className="mb-6">
-              <span className="inline-block px-4 py-2 bg-blue-600/20 border border-blue-400/30 rounded-full text-blue-200 text-sm font-medium tracking-wide uppercase backdrop-blur-sm">
-                Our Latest Rocket
-              </span>
-            </div>
-            
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-              Project
-              <br />
-              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-blue-300 bg-clip-text text-transparent">
-                SOLSTICE
-              </span>
-            </h2>
-            
-            <p className="text-xl text-slate-300 mb-8 leading-relaxed">
-              Our next bid upward, and an exciting new frontier for our team. 
-              Solstice is a united test vehicle, designed to test space hardware 
-              within Earth&apos;s atmosphere.
-            </p>
-            
-            <p className="text-slate-400 mb-10 leading-relaxed">
-              Check out the project page to learn more about this project.
-            </p>
-            
-            <Link 
-              href="/vehicles"
-              className="inline-block px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-            >
-              LEARN MORE
-            </Link>
+            {primaryVehicle ? (
+              <>
+                <div className="mb-6">
+                  <span className="inline-block px-4 py-2 bg-blue-600/20 border border-blue-400/30 rounded-full text-blue-200 text-sm font-medium tracking-wide uppercase backdrop-blur-sm">
+                    Our Latest Rocket
+                  </span>
+                </div>
+                
+                <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                  Project
+                  <br />
+                  <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-blue-300 bg-clip-text text-transparent">
+                    {primaryVehicle.name.toUpperCase()}
+                  </span>
+                </h2>
+                
+                <p className="text-xl text-slate-300 mb-8 leading-relaxed">
+                  {primaryVehicle.description}
+                </p>
+                
+                <p className="text-slate-400 mb-10 leading-relaxed">
+                  Check out the vehicles page to learn more about this project and explore our other vehicles.
+                </p>
+                
+                <Link 
+                  href={`/vehicles/${primaryVehicle.slug}`}
+                  className="inline-block px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                >
+                  LEARN MORE
+                </Link>
+              </>
+            ) : (
+              <div className="text-white">No vehicles available</div>
+            )}
           </div>
 
           {/* Logo/Image */}
@@ -87,17 +97,26 @@ const LatestVehicleSection: React.FC = () => {
               {/* Glow effect behind logo */}
               <div className="absolute inset-0 bg-blue-500/20 rounded-full blur-3xl scale-110 animate-pulse" />
               
-              {/* Logo container */}
+              {/* Vehicle Image container */}
               <div className="relative w-80 h-80 md:w-96 md:h-96">
                 <div className="w-full h-full flex items-center justify-center">
                   <div className="w-64 h-64 md:w-72 md:h-72 relative">
-                    <Image
-                      src="/assets/images/solstice-logo-nobg.png"
-                      alt="Solstice Logo"
-                      fill
-                      className="object-contain drop-shadow-2xl"
-                      priority
-                    />
+                    {primaryVehicle?.image ? (
+                      <Image
+                        src={primaryVehicle.image}
+                        alt={`${primaryVehicle.name} Vehicle`}
+                        fill
+                        className="object-contain drop-shadow-2xl"
+                        priority
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center">
+                        <Rocket 
+                          size={200} 
+                          className="text-white drop-shadow-2xl transform rotate-45" 
+                        />
+                      </div>
+                    )}
                   </div>
                 </div>
                 

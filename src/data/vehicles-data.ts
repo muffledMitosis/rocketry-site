@@ -19,9 +19,9 @@ export const vehicles: Vehicle[] = [
   {
     id: 'solstice',
     name: 'Solstice',
-    description: 'A high-performance launch vehicle designed for precision and reliability in atmospheric testing.',
+    description: 'Our next bid upward, and an exciting new frontier for our team. Solstice is a united test vehicle, designed to test space hardware within Earth\'s atmosphere.',
     status: 'active',
-    year: 2024,
+    year: 2025,
     specifications: {
       height: 'TBD',
       diameter: 'TBD',
@@ -29,7 +29,7 @@ export const vehicles: Vehicle[] = [
       thrust: 'TBD',
       apogee: 'TBD'
     },
-    image: '/assets/images/vehicles/solstice.jpg',
+    image: '/assets/images/vehicles/solstice.png',
     slug: 'solstice'
   },
   {
@@ -45,7 +45,7 @@ export const vehicles: Vehicle[] = [
       thrust: 'TBD',
       apogee: 'TBD'
     },
-    image: '/assets/images/vehicles/garawana.jpg',
+    image: '/assets/images/no-signal.jpg',
     slug: 'garawana'
   },
   {
@@ -61,7 +61,7 @@ export const vehicles: Vehicle[] = [
       thrust: 'TBD',
       apogee: 'TBD'
     },
-    image: '/assets/images/vehicles/vibe-voyager.jpg',
+    image: '/assets/images/no-signal.jpg',
     slug: 'vibe-voyager'
   },
   {
@@ -77,7 +77,7 @@ export const vehicles: Vehicle[] = [
       thrust: 'TBD',
       apogee: 'TBD'
     },
-    image: '/assets/images/vehicles/halo.jpg',
+    image: '/assets/images/no-signal.jpg',
     slug: 'halo'
   }
 ];
