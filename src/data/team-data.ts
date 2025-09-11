@@ -20,30 +20,6 @@ export const teams: Team[] = [
     image: '/assets/images/team-pics/Aerostructures.png'
   },
   {
-    id: 'propulsion',
-    name: 'Propulsion',
-    description: 'Developing and testing innovative propulsion systems to achieve greater altitudes and improved performance.',
-    responsibilities: [
-      'Engine design and optimization',
-      'Fuel research and development',
-      'Static fire testing',
-      'Performance analysis and improvement'
-    ],
-    image: '/assets/images/team-pics/propulsion.png'
-  },
-  {
-    id: 'payload',
-    name: 'Payload',
-    description: 'Creating scientific experiments and technical demonstrations to be carried on rocket flights.',
-    responsibilities: [
-      'Experiment design and development',
-      'Data collection and analysis',
-      'Payload integration with rocket systems',
-      'Post-flight scientific analysis'
-    ],
-    image: '/assets/images/no-signal.jpg'
-  },
-  {
     id: 'avionics',
     name: 'Avionics',
     description: 'Developing the electronic systems that control, guide, and track the rocket during flight.',
@@ -56,14 +32,26 @@ export const teams: Team[] = [
     image: '/assets/images/no-signal.jpg'
   },
   {
-    id: 'recovery',
-    name: 'Recovery',
-    description: 'Designing systems to safely recover the rocket after flight for reusability and data collection.',
+    id: 'budget-inventory',
+    name: 'Budget and Inventory',
+    description: 'Managing financial resources and tracking equipment and materials inventory.',
     responsibilities: [
-      'Parachute design and deployment systems',
-      'Descent rate calculations',
-      'Impact mitigation strategies',
-      'Reusability optimization'
+      'Budget planning and tracking',
+      'Financial reporting',
+      'Inventory management',
+      'Purchase coordination'
+    ],
+    image: '/assets/images/no-signal.jpg'
+  },
+  {
+    id: 'certifications',
+    name: 'Certifications',
+    description: 'Managing certification processes and ensuring compliance with aerospace standards.',
+    responsibilities: [
+      'Certification documentation',
+      'Standards compliance',
+      'Quality assurance',
+      'Regulatory submissions'
     ],
     image: '/assets/images/no-signal.jpg'
   },
@@ -104,18 +92,6 @@ export const teams: Team[] = [
     image: '/assets/images/no-signal.jpg'
   },
   {
-    id: 'budget-inventory',
-    name: 'Budget and Inventory',
-    description: 'Managing financial resources and tracking equipment and materials inventory.',
-    responsibilities: [
-      'Budget planning and tracking',
-      'Financial reporting',
-      'Inventory management',
-      'Purchase coordination'
-    ],
-    image: '/assets/images/no-signal.jpg'
-  },
-  {
     id: 'media-design-partnerships',
     name: 'Media Design & Partnerships',
     description: 'Creating visual content, managing partnerships, and developing the team\'s brand presence.',
@@ -128,6 +104,42 @@ export const teams: Team[] = [
     image: '/assets/images/team-pics/MDP.jpg'
   },
   {
+    id: 'payload',
+    name: 'Payload',
+    description: 'Creating scientific experiments and technical demonstrations to be carried on rocket flights.',
+    responsibilities: [
+      'Experiment design and development',
+      'Data collection and analysis',
+      'Payload integration with rocket systems',
+      'Post-flight scientific analysis'
+    ],
+    image: '/assets/images/no-signal.jpg'
+  },
+  {
+    id: 'propulsion',
+    name: 'Propulsion',
+    description: 'Developing and testing innovative propulsion systems to achieve greater altitudes and improved performance.',
+    responsibilities: [
+      'Engine design and optimization',
+      'Fuel research and development',
+      'Static fire testing',
+      'Performance analysis and improvement'
+    ],
+    image: '/assets/images/team-pics/propulsion.png'
+  },
+  {
+    id: 'recovery',
+    name: 'Recovery',
+    description: 'Designing systems to safely recover the rocket after flight for reusability and data collection.',
+    responsibilities: [
+      'Parachute design and deployment systems',
+      'Descent rate calculations',
+      'Impact mitigation strategies',
+      'Reusability optimization'
+    ],
+    image: '/assets/images/no-signal.jpg'
+  },
+  {
     id: 'safety-legal',
     name: 'Safety and Legal',
     description: 'Ensuring all activities comply with safety regulations and legal requirements.',
@@ -138,17 +150,5 @@ export const teams: Team[] = [
       'Legal documentation'
     ],
     image: '/assets/images/team-pics/safety.png'
-  },
-  {
-    id: 'certifications',
-    name: 'Certifications',
-    description: 'Managing certification processes and ensuring compliance with aerospace standards.',
-    responsibilities: [
-      'Certification documentation',
-      'Standards compliance',
-      'Quality assurance',
-      'Regulatory submissions'
-    ],
-    image: '/assets/images/no-signal.jpg'
   }
 ];

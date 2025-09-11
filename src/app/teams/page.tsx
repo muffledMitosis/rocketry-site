@@ -9,6 +9,9 @@ import { Users, Lightbulb, Target, Rocket } from 'lucide-react';
 const TeamsPage: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [visibleItems, setVisibleItems] = useState<string[]>([]);
+  
+  // Sort teams alphabetically by name
+  const sortedTeams = [...teams].sort((a, b) => a.name.localeCompare(b.name));
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -73,7 +76,7 @@ const TeamsPage: React.FC = () => {
                   isVisible('stat-1') ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
                 }`}
               >
-                <div className="text-3xl md:text-4xl font-bold text-blue-300 mb-2">{teams.length}</div>
+                <div className="text-3xl md:text-4xl font-bold text-blue-300 mb-2">{sortedTeams.length}</div>
                 <div className="text-blue-200 text-sm uppercase tracking-wide">Specialized Teams</div>
               </div>
               <div 
@@ -123,7 +126,7 @@ const TeamsPage: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
-            {teams.map((team) => (
+            {sortedTeams.map((team) => (
               <div 
                 key={team.id}
                 id={team.id}
