@@ -21,15 +21,16 @@ export default function Header() {
   return (
     <header className={`w-full ${isTransparentPage ? 'absolute top-0 z-50 bg-transparent' : 'bg-white shadow-md'}`}>
       <div className="container px-4 mx-auto">
-        <div className="flex flex-row justify-between">
+        <div className="flex flex-row justify-between items-center">
           {/* Logo */}
-          <div className="mr-2 my-4" style={{ viewTransitionName: 'logo' }}>
+          <div className="mr-2 my-4 flex-shrink-0" style={{ viewTransitionName: 'logo' }}>
             <Link href={"/"}>
-              <Image 
+              <Image
                 src="/assets/images/LogoGoldLong.png"
                 alt="Logo"
-                width={200}
-                height={200}
+                width={160}
+                height={160}
+                className="w-auto h-8 sm:h-10 md:h-12"
               />
             </Link>
           </div>
@@ -44,13 +45,13 @@ export default function Header() {
           {/* Mobile Navigation Toggle */}
           <button
             onClick={toggleMenu}
-            className={`md:hidden cursor-pointer ${isTransparentPage ? 'text-white' : 'text-gray-800'}`}
+            className={`md:hidden cursor-pointer p-2 ${isTransparentPage ? 'text-white' : 'text-gray-800'}`}
           >
             {
               isMenuOpen ? (
-                <div><X /></div>
+                <X size={24} />
               ) : (
-                <div><AlignJustify /></div>
+                <AlignJustify size={24} />
               )
             }
           </button>
@@ -59,7 +60,7 @@ export default function Header() {
         {/* Mobile Navigation */}
         {
           isMenuOpen && (
-            <div className="md:hidden bg-white rounded-lg shadow-lg mt-4 py-4 px-2 absolute left-4 right-4 transition-all duration-300 ease-in-out">
+            <div className="md:hidden bg-white rounded-lg shadow-lg mt-4 py-4 px-4 absolute left-4 right-4 top-full z-50 transition-all duration-300 ease-in-out">
               <div className="flex flex-col space-y-4">
                 {headerLinks.map((content) => (
                   <HeaderLink key={content} linkContent={content} />
@@ -67,8 +68,8 @@ export default function Header() {
               </div>
             </div>
           )
-        } 
-      
+        }
+
       </div>
     </header>
   );

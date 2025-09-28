@@ -69,7 +69,7 @@ export const vehicles: Vehicle[] = [
     name: 'Halo',
     description: 'A compact and efficient rocket designed for rapid deployment and precise trajectory control.',
     status: 'development',
-    year: 2024,
+    year: 2020,
     specifications: {
       height: 'TBD',
       diameter: 'TBD',
@@ -77,7 +77,7 @@ export const vehicles: Vehicle[] = [
       thrust: 'TBD',
       apogee: 'TBD'
     },
-    image: '/assets/images/no-signal.jpg',
+    image: '/assets/images/vehicles/halo.png',
     slug: 'halo'
   }
 ];
