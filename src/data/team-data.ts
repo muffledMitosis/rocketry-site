@@ -58,38 +58,37 @@ export const teams: Team[] = [
   {
     id: 'dynamics-control',
     name: 'Dynamics and Control',
-    description: 'Designing control systems and analyzing flight dynamics to ensure stable and predictable rocket behavior.',
+    description: 'Designing and implementing control systems by analysing flight dynamics to ensure stable and predictable rocket behavior.',
     responsibilities: [
-      'Flight dynamics modeling',
-      'Control system design',
-      'Stability analysis',
-      'Guidance algorithm development'
+      'Controller design',
+      'Flight dynamics modelling',
+      'Systems optimisation',
+      'Control system implementation'
     ],
-    image: '/assets/images/no-signal.jpg'
+    image: '/assets/images/team-pics/dynamics-control.jpg'
   },
   {
     id: 'engagement-outreach',
     name: 'Engagement and Outreach',
-    description: 'Building relationships with the community, educational institutions, and promoting aerospace education.',
+    description: 'Strengthening team culture and sharing the excitement of rocketry through events, education, and public engagement.',
     responsibilities: [
-      'Educational outreach programs',
-      'Community engagement',
-      'School visit coordination',
-      'Public demonstrations'
+      'Teams social & celebratory events',
+      'Educational outreach',
+      'Showcasing at industry & community events',
+      'Whole-team meetings'
     ],
     image: '/assets/images/team-pics/engagement.jpg'
   },
   {
     id: 'logistics',
     name: 'Logistics',
-    description: 'Managing the operational aspects of launches, transportation, and team coordination.',
+    description: 'Planning and executing team fieldwork, coordinating equiptment, food,transport, and safety  to ensure smooth execution of team projects.',
     responsibilities: [
-      'Launch site coordination',
-      'Equipment transportation',
-      'Team scheduling and logistics',
-      'Event planning and execution'
+      'Engages with a range of organisations to meet team fieldwork objectives',
+      'Supervises large groups during regional testing',
+      'Develops launch trip protocols.'
     ],
-    image: '/assets/images/no-signal.jpg'
+    image: '/assets/images/team-pics/logistics.jpg'
   },
   {
     id: 'media-design-partnerships',
@@ -113,7 +112,7 @@ export const teams: Team[] = [
       'Payload integration with rocket systems',
       'Post-flight scientific analysis'
     ],
-    image: '/assets/images/no-signal.jpg'
+    image: '/assets/images/team-pics/payload.jpg'
   },
   {
     id: 'propulsion',
