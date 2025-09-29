@@ -4,12 +4,13 @@ import { headerLinks } from "@/data/header-content";
 import HeaderLink from "./header-link";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AlignJustify, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const isHomePage = pathname === '/';
   const isTransparentPage = isHomePage || pathname === '/teams' || pathname === '/partners' || pathname === '/vehicles';
@@ -18,8 +19,29 @@ export default function Header() {
     setIsMenuOpen(!isMenuOpen);
   }
 
+  // add track scroll position to activate sticky header
+   useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+
+
   return (
-    <header className={`w-full ${isTransparentPage ? 'absolute top-0 z-50 bg-transparent' : 'bg-white shadow-md'}`}>
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transition-colors duration-500 ${
+        scrolled || !isTransparentPage
+          ? "bg-[#1f304f] shadow-md text-gray-800 backdrop-blur"
+          : "bg-transparent text-white"
+      }`}
+    >
       <div className="container px-4 mx-auto">
         <div className="flex flex-row justify-between">
           {/* Logo */}
@@ -73,3 +95,7 @@ export default function Header() {
     </header>
   );
 }
+function setScrolled(arg0: boolean) {
+  throw new Error("Function not implemented.");
+}
+
