@@ -194,7 +194,29 @@ const PartnersPage: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8">
-            {partners.map((partner, index) => (
+            {[...partners].sort((a, b) => {
+              // Define priority order for ANU organizations
+              const anuOrder = [
+                'Australian National University',
+                'ANU Collage of Systems and Society',
+                'ANU Research School of Physics'
+              ];
+
+              const aIndex = anuOrder.indexOf(a.name);
+              const bIndex = anuOrder.indexOf(b.name);
+
+              // If both are ANU organizations, sort by priority order
+              if (aIndex !== -1 && bIndex !== -1) {
+                return aIndex - bIndex;
+              }
+
+              // ANU organizations come first
+              if (aIndex !== -1) return -1;
+              if (bIndex !== -1) return 1;
+
+              // For non-ANU organizations, sort alphabetically
+              return a.name.localeCompare(b.name);
+            }).map((partner, index) => (
               <PartnerCard key={partner.id} partner={partner} index={index} />
             ))}
           </div>
