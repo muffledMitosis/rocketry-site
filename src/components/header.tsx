@@ -96,7 +96,4 @@ export default function Header() {
     </header>
   );
 }
-function setScrolled(arg0: boolean) {
-  throw new Error("Function not implemented.");
-}
 
