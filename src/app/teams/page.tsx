@@ -36,9 +36,9 @@ const TeamsPage: React.FC = () => {
   const isVisible = (id: string) => visibleItems.includes(id);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       {/* Hero Section */}
-      <section className="relative h-[50vh] bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 overflow-hidden flex items-center" style={{ viewTransitionName: 'page-content' }}>
+      <section className="relative h-[50vh] bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden flex items-center" style={{ viewTransitionName: 'page-content' }}>
         {/* Grain/Noise Effect */}
         <div className="absolute inset-0 pointer-events-none">
           <div 
@@ -61,8 +61,8 @@ const TeamsPage: React.FC = () => {
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">
               Our Teams
             </h1>
-            <div className="w-16 sm:w-24 h-1 bg-blue-400 mx-auto mb-6 sm:mb-8"></div>
-            <p className="text-base sm:text-lg lg:text-xl text-blue-100 leading-relaxed max-w-3xl mx-auto mb-8 sm:mb-12 px-4">
+            <div className="w-16 sm:w-24 h-1 bg-slate-400 mx-auto mb-6 sm:mb-8"></div>
+            <p className="text-base sm:text-lg lg:text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto mb-8 sm:mb-12 px-4">
               ANU Rocketry brings together passionate students from diverse disciplines to design,
               build, and launch experimental rockets. Our specialized teams work collaboratively
               to push the boundaries of student aerospace engineering.
@@ -76,8 +76,8 @@ const TeamsPage: React.FC = () => {
                   isVisible('stat-1') ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
                 }`}
               >
-                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-300 mb-1 sm:mb-2">{sortedTeams.length}</div>
-                <div className="text-blue-200 text-xs sm:text-sm uppercase tracking-wide">Specialized Teams</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-200 mb-1 sm:mb-2">{sortedTeams.length}</div>
+                <div className="text-slate-400 text-xs sm:text-sm uppercase tracking-wide">Specialized Teams</div>
               </div>
               <div
                 id="stat-2"
@@ -85,8 +85,8 @@ const TeamsPage: React.FC = () => {
                   isVisible('stat-2') ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
                 }`}
               >
-                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-300 mb-1 sm:mb-2">50+</div>
-                <div className="text-blue-200 text-xs sm:text-sm uppercase tracking-wide">Active Members</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-200 mb-1 sm:mb-2">50+</div>
+                <div className="text-slate-400 text-xs sm:text-sm uppercase tracking-wide">Active Members</div>
               </div>
               <div
                 id="stat-3"
@@ -94,8 +94,8 @@ const TeamsPage: React.FC = () => {
                   isVisible('stat-3') ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
                 }`}
               >
-                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-300 mb-1 sm:mb-2">10+</div>
-                <div className="text-blue-200 text-xs sm:text-sm uppercase tracking-wide">Disciplines</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-200 mb-1 sm:mb-2">10+</div>
+                <div className="text-slate-400 text-xs sm:text-sm uppercase tracking-wide">Disciplines</div>
               </div>
               <div
                 id="stat-4"
@@ -103,8 +103,8 @@ const TeamsPage: React.FC = () => {
                   isVisible('stat-4') ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
                 }`}
               >
-                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-300 mb-1 sm:mb-2">5+</div>
-                <div className="text-blue-200 text-xs sm:text-sm uppercase tracking-wide">Years Experience</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-200 mb-1 sm:mb-2">5+</div>
+                <div className="text-slate-400 text-xs sm:text-sm uppercase tracking-wide">Years Experience</div>
               </div>
             </div>
           </div>
@@ -115,11 +115,11 @@ const TeamsPage: React.FC = () => {
       <section className="py-12 sm:py-20" ref={sectionRef}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4">
               Meet Our Specialized Teams
             </h2>
-            <div className="w-12 sm:w-16 h-1 bg-blue-500 mx-auto mb-4 sm:mb-6"></div>
-            <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto px-4">
+            <div className="w-12 sm:w-16 h-1 bg-blue-400 mx-auto mb-4 sm:mb-6"></div>
+            <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto px-4">
               Each team brings unique expertise and passion to our mission of advancing
               student aerospace engineering through hands-on learning and innovation.
             </p>
@@ -130,7 +130,7 @@ const TeamsPage: React.FC = () => {
               <div
                 key={team.id}
                 id={team.id}
-                className={`team-card bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-700 transform hover:shadow-2xl hover:-translate-y-2 ${
+                className={`team-card bg-slate-800/60 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden transition-all duration-700 transform hover:shadow-2xl hover:-translate-y-2 border border-slate-700/50 ${
                   isVisible(team.id) ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
                 }`}
               >
@@ -144,14 +144,14 @@ const TeamsPage: React.FC = () => {
                   />
                 </div>
                 <div className="p-4 sm:p-6">
-                  <h3 className="text-lg sm:text-xl font-bold text-blue-900 mb-2 sm:mb-3">{team.name}</h3>
-                  <p className="text-gray-700 mb-3 sm:mb-4 text-sm leading-relaxed">{team.description}</p>
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3">{team.name}</h3>
+                  <p className="text-slate-300 mb-3 sm:mb-4 text-sm leading-relaxed">{team.description}</p>
                   <div>
-                    <h4 className="font-semibold text-blue-800 mb-2 sm:mb-3 text-sm">Key Responsibilities:</h4>
-                    <ul className="text-xs sm:text-sm text-gray-600 space-y-1 sm:space-y-2">
+                    <h4 className="font-semibold text-blue-400 mb-2 sm:mb-3 text-sm">Key Responsibilities:</h4>
+                    <ul className="text-xs sm:text-sm text-slate-400 space-y-1 sm:space-y-2">
                       {team.responsibilities.map((responsibility, index) => (
                         <li key={index} className="flex items-start">
-                          <span className="text-blue-700 mr-2 mt-1 flex-shrink-0">•</span>
+                          <span className="text-blue-400 mr-2 mt-1 flex-shrink-0">•</span>
                           <span className="leading-tight">{responsibility}</span>
                         </li>
                       ))}
@@ -163,59 +163,59 @@ const TeamsPage: React.FC = () => {
           </div>
 
           {/* Call to Action Section */}
-          <div className="bg-gradient-to-br from-blue-900 to-blue-800 rounded-2xl p-6 sm:p-8 md:p-12 text-white shadow-2xl">
+          <div className="bg-gradient-to-br from-slate-800 to-slate-700 rounded-2xl p-6 sm:p-8 md:p-12 text-white shadow-2xl border border-slate-600">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 items-center">
               <div>
                 <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Join Our Team</h3>
-                <p className="text-blue-100 mb-4 sm:mb-6 text-base sm:text-lg">
+                <p className="text-slate-300 mb-4 sm:mb-6 text-base sm:text-lg">
                   Ready to be part of something extraordinary? We&apos;re always looking for
                   passionate students to join our mission and contribute to cutting-edge
                   aerospace projects.
                 </p>
                 <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
                   <div className="flex items-center">
-                    <Users className="w-4 h-4 sm:w-5 sm:h-5 text-blue-300 mr-2 sm:mr-3 flex-shrink-0" />
+                    <Users className="w-4 h-4 sm:w-5 sm:h-5 text-slate-400 mr-2 sm:mr-3 flex-shrink-0" />
                     <span className="text-sm sm:text-base">Collaborative, multidisciplinary environment</span>
                   </div>
                   <div className="flex items-center">
-                    <Lightbulb className="w-4 h-4 sm:w-5 sm:h-5 text-blue-300 mr-2 sm:mr-3 flex-shrink-0" />
+                    <Lightbulb className="w-4 h-4 sm:w-5 sm:h-5 text-slate-400 mr-2 sm:mr-3 flex-shrink-0" />
                     <span className="text-sm sm:text-base">Hands-on learning and skill development</span>
                   </div>
                   <div className="flex items-center">
-                    <Target className="w-4 h-4 sm:w-5 sm:h-5 text-blue-300 mr-2 sm:mr-3 flex-shrink-0" />
+                    <Target className="w-4 h-4 sm:w-5 sm:h-5 text-slate-400 mr-2 sm:mr-3 flex-shrink-0" />
                     <span className="text-sm sm:text-base">Real-world project experience</span>
                   </div>
                   <div className="flex items-center">
-                    <Rocket className="w-4 h-4 sm:w-5 sm:h-5 text-blue-300 mr-2 sm:mr-3 flex-shrink-0" />
+                    <Rocket className="w-4 h-4 sm:w-5 sm:h-5 text-slate-400 mr-2 sm:mr-3 flex-shrink-0" />
                     <span className="text-sm sm:text-base">Opportunity to launch your creations</span>
                   </div>
                 </div>
                 <Link
                   href="/join"
-                  className="inline-block px-5 py-2 sm:px-6 sm:py-3 bg-white text-blue-900 rounded-lg font-semibold hover:bg-blue-50 transition-colors text-sm sm:text-base"
+                  className="inline-block px-5 py-2 sm:px-6 sm:py-3 bg-white text-slate-900 rounded-lg font-semibold hover:bg-slate-100 transition-colors text-sm sm:text-base"
                 >
                   Learn How to Join
                 </Link>
               </div>
               <div className="relative">
-                <div className="bg-blue-700 rounded-xl p-4 sm:p-6 shadow-xl">
+                <div className="bg-slate-600 rounded-xl p-4 sm:p-6 shadow-xl border border-slate-500">
                   <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">What You&apos;ll Gain</h4>
                   <ul className="space-y-2 sm:space-y-3">
                     <li className="flex items-start">
-                      <span className="text-blue-300 mr-2 flex-shrink-0">✓</span>
-                      <span className="text-blue-100 text-sm sm:text-base">Technical expertise in aerospace engineering</span>
+                      <span className="text-slate-300 mr-2 flex-shrink-0">✓</span>
+                      <span className="text-slate-200 text-sm sm:text-base">Technical expertise in aerospace engineering</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="text-blue-300 mr-2 flex-shrink-0">✓</span>
-                      <span className="text-blue-100 text-sm sm:text-base">Leadership and project management skills</span>
+                      <span className="text-slate-300 mr-2 flex-shrink-0">✓</span>
+                      <span className="text-slate-200 text-sm sm:text-base">Leadership and project management skills</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="text-blue-300 mr-2 flex-shrink-0">✓</span>
-                      <span className="text-blue-100 text-sm sm:text-base">Network with industry professionals</span>
+                      <span className="text-slate-300 mr-2 flex-shrink-0">✓</span>
+                      <span className="text-slate-200 text-sm sm:text-base">Network with industry professionals</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="text-blue-300 mr-2 flex-shrink-0">✓</span>
-                      <span className="text-blue-100 text-sm sm:text-base">Prepare for aerospace career opportunities</span>
+                      <span className="text-slate-300 mr-2 flex-shrink-0">✓</span>
+                      <span className="text-slate-200 text-sm sm:text-base">Prepare for aerospace career opportunities</span>
                     </li>
                   </ul>
                 </div>
