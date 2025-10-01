@@ -1,7 +1,6 @@
 export interface Partner {
   id: string;
   name: string;
-  slogan: string;
   logo: string;
   website: string;
   tier: 'apogee' | 'ascent' | 'takeoff' | 'ignition';
@@ -9,83 +8,73 @@ export interface Partner {
 
 export const partners: Partner[] = [
   {
-    id: 'aerospace-corp',
-    name: 'Aerospace Corporation',
-    slogan: 'Engineering Tomorrow\'s Space Solutions',
-    logo: '/assets/images/partners/aerospace-corp.png',
-    website: 'https://example.com/aerospace-corp',
+    id: 'inspace',
+    name: 'InSpace',
+    logo: '/assets/images/partners/inspace.png',
+    website: 'https://inspace.anu.edu.au/home',
     tier: 'apogee'
   },
   {
-    id: 'rocket-dynamics',
-    name: 'Rocket Dynamics Ltd',
-    slogan: 'Propelling Innovation Forward',
-    logo: '/assets/images/partners/rocket-dynamics.png',
-    website: 'https://example.com/rocket-dynamics',
+    id: 'research-school-of-physics',
+    name: 'ANU Research School of Physics',
+    logo: '/assets/images/partners/research-school-of-physics.png',
+    website: 'https://physics.anu.edu.au',
     tier: 'apogee'
   },
   {
-    id: 'stellar-tech',
-    name: 'Stellar Technologies',
-    slogan: 'Reaching for the Stars',
-    logo: '/assets/images/partners/stellar-tech.png',
-    website: 'https://example.com/stellar-tech',
+    id: 'liquid-instruments',
+    name: 'Liquid Instruments',
+    logo: '/assets/images/partners/liquid-instruments.png',
+    website: 'https://liquidinstruments.com',
     tier: 'ascent'
   },
   {
-    id: 'orbital-systems',
-    name: 'Orbital Systems Inc',
-    slogan: 'Advanced Satellite Solutions',
-    logo: '/assets/images/partners/orbital-systems.png',
-    website: 'https://example.com/orbital-systems',
+    id: 'gme',
+    name: 'GME Systems Inc',
+    logo: '/assets/images/partners/gme.png',
+    website: 'https://www.gme.net.au/au/',
     tier: 'ascent'
   },
   {
-    id: 'nova-engineering',
-    name: 'Nova Engineering',
-    slogan: 'Precision in Motion',
-    logo: '/assets/images/partners/nova-engineering.png',
-    website: 'https://example.com/nova-engineering',
+    id: 'acosas',
+    name: 'ANU Collage of Systems and Society',
+    logo: '/assets/images/partners/systems-and-society.png',
+    website: 'https://systems.anu.edu.au/',
     tier: 'ascent'
   },
   {
-    id: 'cosmic-materials',
-    name: 'Cosmic Materials Co',
-    slogan: 'Materials for the Future',
-    logo: '/assets/images/partners/cosmic-materials.png',
-    website: 'https://example.com/cosmic-materials',
+    id: 'aographics',
+    name: 'AOGraphics',
+    logo: '/assets/images/partners/aographics.png',
+    website: 'https://www.aographics.com.au/',
     tier: 'takeoff'
   },
   {
-    id: 'propulsion-plus',
-    name: 'Propulsion Plus',
-    slogan: 'Power Your Dreams',
-    logo: '/assets/images/partners/propulsion-plus.png',
-    website: 'https://example.com/propulsion-plus',
+    id: 'ansys',
+    name: 'Ansys',
+    logo: '/assets/images/partners/ansys.png',
+    website: 'https://www.ansys.com/',
     tier: 'takeoff'
   },
   {
-    id: 'space-ventures',
-    name: 'Space Ventures Group',
-    slogan: 'Investing in Tomorrow',
-    logo: '/assets/images/partners/space-ventures.png',
-    website: 'https://example.com/space-ventures',
+    id: 'solid-works',
+    name: 'DS Solid Works',
+    logo: '/assets/images/partners/solidworks.png',
+    website: 'https://www.solidworks.com/',
     tier: 'ignition'
   },
   {
-    id: 'galaxy-components',
-    name: 'Galaxy Components',
-    slogan: 'Quality Components for Space',
-    logo: '/assets/images/partners/galaxy-components.png',
-    website: 'https://example.com/galaxy-components',
+    id: '4data',
+    name: '4Data',
+    logo: '/assets/images/partners/4data.png',
+    website: 'https://www.4data.com.au/',
     tier: 'ignition'
   },
   {
-    id: 'astro-solutions',
-    name: 'Astro Solutions',
-    slogan: 'Your Space Technology Partner',
-    logo: '/assets/images/partners/astro-solutions.png',
-    website: 'https://example.com/astro-solutions',
+    id: 'anu',
+    name: 'Australian National University',
+    logo: '/assets/images/partners/anu.png',
+    website: 'https://www.anu.edu.au/',
     tier: 'ignition'
   }
 ];
