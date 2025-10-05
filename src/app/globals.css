@@ -5,3 +5,17 @@
 	--color-rock-blue-dark: #1f304f;
 	--color-rock-blue-light: #1f304f;
 }
+
+@keyframes star-drift {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 600px;
+  }
+}
+
+.animate-star-drift {
+  animation: star-drift 120s linear infinite;
+  will-change: background-position;
+}

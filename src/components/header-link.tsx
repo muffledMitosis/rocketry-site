@@ -10,7 +10,7 @@ interface HeaderLinkProps {
 const bulidLink = (name: string, href: string)=>{
   return (
     <ViewTransitionLink 
-      className={`${montserrat.className} hover:opacity-70 transition-opacity duration-200`} 
+      className={`${montserrat.className} hover:opacity-100 hover:text-[#eabb5e] transition-opacity duration-200`} 
       href={href}
       viewTransitionName="nav-item"
     >
@@ -36,7 +36,7 @@ export default function HeaderLink(props: HeaderLinkProps) {
 
   return (
     <ViewTransitionLink
-      className={`${montserrat.className} hover:opacity-70 transition-opacity duration-200`}
+      className={`${montserrat.className} hover:opacity-100  hover:text-[#eabb5e] transition-opacity duration-200`}
       href={linkContent.toLowerCase().split(" ").join("")}
       viewTransitionName="nav-item"
     >

@@ -13,7 +13,8 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const isHomePage = pathname === '/';
-  const isTransparentPage = isHomePage || pathname === '/teams' || pathname === '/partners' || pathname === '/vehicles';
+  const isTransparentPage = isHomePage || pathname === '/teams' || pathname === '/partners' || pathname === '/vehicles'
+  || pathname == '/join';
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);

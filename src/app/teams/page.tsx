@@ -38,7 +38,7 @@ const TeamsPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
       {/* Hero Section */}
-      <section className="relative h-[50vh] bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 overflow-hidden flex items-center" style={{ viewTransitionName: 'page-content' }}>
+      <section className="relative py-24 bg-gradient-to-br from-[#1f376f] via-[#1f304f] to-[#1f304f] flex items-center overflow-hidden" style={{ viewTransitionName: 'page-content' }}>
         {/* Grain/Noise Effect */}
         <div className="absolute inset-0 pointer-events-none">
           <div 
@@ -56,9 +56,9 @@ const TeamsPage: React.FC = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-900/5 to-blue-900/30 opacity-70" />
         </div>
         
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-16 pt-5">
           <div className="text-center">
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">
               Our Teams
             </h1>
             <div className="w-24 h-1 bg-blue-400 mx-auto mb-8"></div>
