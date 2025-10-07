@@ -54,28 +54,26 @@ const VehiclesPage: React.FC = () => {
         isVisible(vehicle.id) || isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
       }`}
     >
-      <div className="p-4 sm:p-6 lg:p-8 h-full">
-        <div className="flex flex-col items-center justify-center h-full">
-          {/* Vehicle Image/Mission Patch */}
-          <div className="relative w-full aspect-square mb-4 sm:mb-6 rounded-xl overflow-hidden bg-gradient-to-br from-slate-700 to-slate-800 flex items-center justify-center">
-            {vehicle.image ? (
-              <img
-                src={vehicle.image}
-                alt={`${vehicle.name} Mission Patch`}
-                className="w-full h-full object-contain p-4 transition-transform duration-500 hover:scale-110"
-              />
-            ) : (
-              <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 bg-gradient-to-br from-slate-600 to-slate-700 rounded-lg flex items-center justify-center shadow-lg">
-                <Rocket className="w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 text-slate-300" />
-              </div>
-            )}
+      {/* Vehicle Image/Mission Patch */}
+      <div className="h-48 sm:h-56 lg:h-64 overflow-hidden bg-slate-900/40 flex items-center justify-center">
+        {vehicle.image ? (
+          <img
+            src={vehicle.image}
+            alt={`${vehicle.name} Mission Patch`}
+            className="w-full h-full object-contain p-6 transition-transform duration-500 hover:scale-110"
+          />
+        ) : (
+          <div className="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 flex items-center justify-center">
+            <Rocket className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 text-slate-400 transition-transform duration-500 hover:scale-110" />
           </div>
+        )}
+      </div>
 
-          {/* Vehicle Name */}
-          <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white text-center">
-            {vehicle.name}
-          </h3>
-        </div>
+      {/* Vehicle Name */}
+      <div className="p-4 sm:p-6">
+        <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white text-center">
+          {vehicle.name}
+        </h3>
       </div>
     </div>
   );
