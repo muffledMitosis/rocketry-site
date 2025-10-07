@@ -79,6 +79,22 @@ export const vehicles: Vehicle[] = [
     },
     image: '/assets/images/vehicles/halo.png',
     slug: 'halo'
+  },
+  {
+    id: 'dyurra',
+    name: 'Dyurra',
+    description: 'TBD',
+    status: 'development',
+    year: 2024,
+    specifications: {
+      height: 'TBD',
+      diameter: 'TBD',
+      mass: 'TBD',
+      thrust: 'TBD',
+      apogee: 'TBD'
+    },
+    image: '/assets/images/no-signal.jpg',
+    slug: 'dyurra'
   }
 ];
 
