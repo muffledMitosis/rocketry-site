@@ -119,7 +119,7 @@ const PartnersPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       {/* Hero Section */}
-      <section className="relative h-[50vh] overflow-hidden flex items-center">
+      <section className="relative min-h-[50vh] overflow-hidden flex items-start pt-20 sm:pt-24 md:pt-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">
