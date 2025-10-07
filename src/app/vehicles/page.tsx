@@ -50,10 +50,9 @@ const VehiclesPage: React.FC = () => {
     <div
       id={vehicle.id}
       key={vehicle.id}
-      className={`vehicle-card group relative bg-slate-800/60 backdrop-blur-sm rounded-2xl shadow-lg transition-all duration-500 transform overflow-hidden border border-slate-700/50 ${
+      className={`vehicle-card bg-slate-800/60 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden transition-all duration-700 transform hover:shadow-2xl hover:-translate-y-2 border border-slate-700/50 ${
         isVisible(vehicle.id) || isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
       }`}
-      style={{ transitionDelay: `${index * 150}ms` }}
     >
       <div className="p-4 sm:p-6 lg:p-8 h-full">
         <div className="flex flex-col items-center justify-center h-full">
@@ -63,7 +62,7 @@ const VehiclesPage: React.FC = () => {
               <img
                 src={vehicle.image}
                 alt={`${vehicle.name} Mission Patch`}
-                className="w-full h-full object-contain p-4"
+                className="w-full h-full object-contain p-4 transition-transform duration-500 hover:scale-110"
               />
             ) : (
               <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 bg-gradient-to-br from-slate-600 to-slate-700 rounded-lg flex items-center justify-center shadow-lg">
