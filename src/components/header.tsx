@@ -82,7 +82,7 @@ export default function Header() {
         {/* Mobile Navigation */}
         {
           isMenuOpen && (
-            <div className="md:hidden bg-white rounded-lg shadow-lg mt-4 py-4 px-4 absolute left-4 right-4 top-full z-50 transition-all duration-300 ease-in-out">
+            <div className="md:hidden bg-white rounded-lg shadow-lg mt-4 py-4 px-4 absolute left-4 right-4 top-full z-50 transition-all duration-300 ease-in-out text-gray-800">
               <div className="flex flex-col space-y-4">
                 {headerLinks.map((content) => (
                   <HeaderLink key={content} linkContent={content} />

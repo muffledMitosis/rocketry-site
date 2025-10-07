@@ -5,3 +5,12 @@
 	--color-rock-blue-dark: #1f304f;
 	--color-rock-blue-light: #1f304f;
 }
+
+/* Fix Safari viewport height issue - prevent white bar at bottom */
+html {
+	background-color: #0f172a; /* slate-900 */
+}
+
+body {
+	background-color: #0f172a; /* slate-900 */
+}
