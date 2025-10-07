@@ -131,11 +131,7 @@ const PartnersPage: React.FC = () => {
               Through their support, we continue to push the boundaries of student aerospace engineering
               and inspire the next generation of innovators.
             </p>
-            <div className="mt-8 sm:mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-4xl mx-auto">
-              <div className="text-center">
-                <div className="text-2xl sm:text-3xl font-bold text-slate-200">{partners.length}</div>
-                <div className="text-slate-400 text-sm sm:text-base">Trusted Partners</div>
-              </div>
+            <div className="mt-8 sm:mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-2xl mx-auto">
               <div className="text-center">
                 <div className="text-2xl sm:text-3xl font-bold text-slate-200">5+</div>
                 <div className="text-slate-400 text-sm sm:text-base">Years of Partnership</div>
