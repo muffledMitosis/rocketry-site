@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { vehicles, Vehicle } from '@/data/vehicles-data';
 import { Rocket } from 'lucide-react';
+import Image from 'next/image';
 
 const VehiclesPage: React.FC = () => {
   const [visibleItems, setVisibleItems] = useState<string[]>([]);
@@ -46,7 +47,7 @@ const VehiclesPage: React.FC = () => {
 
   const isVisible = (id: string) => visibleItems.includes(id);
 
-  const VehicleCard: React.FC<{ vehicle: Vehicle; index: number }> = ({ vehicle, index }) => (
+  const VehicleCard: React.FC<{ vehicle: Vehicle; index: number }> = ({ vehicle }) => (
     <div
       id={vehicle.id}
       key={vehicle.id}
@@ -57,9 +58,11 @@ const VehiclesPage: React.FC = () => {
       {/* Vehicle Image/Mission Patch */}
       <div className="h-48 sm:h-56 lg:h-64 overflow-hidden bg-slate-900/40 flex items-center justify-center">
         {vehicle.image ? (
-          <img
+          <Image
             src={vehicle.image}
             alt={`${vehicle.name} Mission Patch`}
+            width={256}
+            height={256}
             className="w-full h-full object-contain p-6 transition-transform duration-500 hover:scale-110"
           />
         ) : (
